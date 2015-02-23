@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name          Eyny Cleaner
 // @namespace     https://arphen.github.io/
-// @version       0.1.20150223
+// @version       0.2.20150223
 // @description   Hide some elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
 // @author     Arphen Lin
-// @require       https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js
+// @require      http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
 // @grant         none
 // ==/UserScript==
 
