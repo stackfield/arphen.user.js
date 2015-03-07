@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny Beautifier
 // @namespace     https://arphen.github.io/
-// @version       0.3.20150307
+// @version       0.4.20150307
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin

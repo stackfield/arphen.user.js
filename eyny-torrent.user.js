@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny Torrent Link
 // @namespace     https://arphen.github.io/
-// @version       0.1.20150307
+// @version       0.2.20150307
 // @description   Move torrent link to top, auto close window after downloading torrent.
 // @include       http://*.eyny.com/forum.php*
 // @copyright     2015+, Arphen Lin
