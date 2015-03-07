@@ -13,7 +13,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 function createContainer(){
-    $('body').append('<div id="torrent">BT: </div>');
+    $('body').append('<div id="torrent"></div>');
     $('#torrent').css({
         position: "fixed", top: "0px", right: "0px", 
         backgroundColor: "yellow", 
@@ -26,6 +26,7 @@ function moveTop(ele){
         createContainer();
     }
     $('#torrent').append(ele);
+	$('#torrent').append('<br>');
 }
 
 $('a[href*="attachment"]').each(function(){
