@@ -32,7 +32,7 @@ function hilite(){
             var o = $(this).parent().parent();
             $(o).css({backgroundColor: "yellow", border: "1px solid red" });
         }        
-        if(s.search(/(合集|連發)/)>=0){
+        if(s.search(/(合集|合輯|連發)/)>=0){
             //alert(s);
             var o = $(this).parent().parent();
             $(o).css({backgroundColor: "red", border: "1px solid red" });
