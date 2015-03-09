@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          115
 // @namespace     https://arphen.github.io/
-// @version       0.1.20150309
+// @version       0.2.20150309
 // @description   Modify the page
 // @include       http*://115.com/*
 // @copyright     2015+, Arphen Lin
@@ -32,7 +32,18 @@ var tmrCheckPath = setInterval(checkPath, 1000);
 var tmrCheckImgClosed = null;
 
 function checkPath(){
-    var objs = $('iframe[rel*="wangpan"]').contents().find('div.file-path');
+    // if search box is not empty, bypass 
+    var objs = $('iframe[rel*="wangpan"]').contents().find('#js_search_name_input');
+    if(objs.length<=0){
+        return;
+    }else{
+        if($(objs[0]).val() != ""){
+            log('search box = ' + $(objs[0]).val());
+            return;
+        }
+    }
+
+    objs = $('iframe[rel*="wangpan"]').contents().find('div.file-path');
     if(objs.length<=0) return;
 
     var newPath = $(objs[0]).text();
