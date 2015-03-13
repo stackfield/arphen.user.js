@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          115
 // @namespace     https://arphen.github.io/
-// @version       0.4.20150313
+// @version       0.5.20150313
 // @description   Modify the page
 // @include       http*://115.com/*
 // @copyright     2015+, Arphen Lin
@@ -13,9 +13,12 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 var url = window.location.href;
+var autoMode = false;
 var filePath = "";
 var prevFolder = "";
 var viewImageMode = false;
+var tmrCheckImgClosed = null;
+var tmrCheckPath = null;
 
 function log(text){
     try{
@@ -24,15 +27,38 @@ function log(text){
     }
 }
 
+function createImgController(){
+    $($('body.frame-body')[0]).append('<div id="controllerWrapper"><input id="autoMode" type="checkbox">Auto Mode</div>');
+    $('#controllerWrapper').css({
+        position: "fixed", top: "0px", left: "0px", 
+        backgroundColor: "yellow", 
+        border: "2px solid red",
+        fontSize: "12px"});
+    $('#autoMode').click(function(){
+        autoMode = ($('input#autoMode:checked').length > 0);
+        log('autoMode = ' + autoMode);
+        if(autoMode){
+            tmrCheckPath = setInterval(checkPath, 1000);
+        }else{
+            clearInterval(tmrCheckPath);
+            tmrCheckPath = null;
+            filePath = "";
+            prevFolder = "";
+        }
+    });
+}
+createImgController();
+
+// when iframe is loaded
 $('iframe[rel*="wangpan"]').load(function(){
     //$('iframe[rel*="wangpan"]').contents().find('body').html('Hey, i`ve changed content of <body>! Yay!!!');
     //alert($('iframe[rel*="wangpan"]').contents().find('span.file-name a[field]').length);
 });
 
-var tmrCheckPath = setInterval(checkPath, 1000);
-var tmrCheckImgClosed = null;
-
 function checkPath(){
+    // if not auto mode, bypass
+    if(!autoMode) return;
+
     // if search box is not empty, bypass 
     var objs = $('iframe[rel*="wangpan"]').contents().find('#js_search_name_input');
     if(objs.length<=0) return;
@@ -120,7 +146,8 @@ function returnToParentFolder(){
     var objs = $('iframe[rel*="wangpan"]').contents().find('div.file-path a');
     if(objs.length>0) {
         // keep current folder name
-        prevFolder = $(objs[objs.length-1]).text();
+        //prevFolder = $(objs[objs.length-1]).text();
+        prevFolder = $(objs[objs.length-1]).attr('title');
         log('prevFolder = ' + prevFolder);
         // return to previous folder
         objs[objs.length-2].click();
