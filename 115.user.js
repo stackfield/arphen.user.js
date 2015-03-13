@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          115
 // @namespace     https://arphen.github.io/
-// @version       0.3.20150313
+// @version       0.4.20150313
 // @description   Modify the page
 // @include       http*://115.com/*
 // @copyright     2015+, Arphen Lin
@@ -83,6 +83,20 @@ function showImage(img){
         objs[0].click(); // show image        
         // check if image closed
         tmrCheckImgClosed = setInterval(checkImgClosed, 1000);
+        // simulate space key as ESC
+        $('body').keydown(function(e){
+            log('keydown = ' + e.which);
+            //return;
+            if(e.which == 32){ // space key -> close image viewer
+                objs = $('div.pvc-close a[data-btn="close"');
+                if(objs.length>0){
+                    objs[0].click();
+                }
+                //var e = jQuery.Event("keydown");
+                //e.which = 27; // # ESC
+                //$("body").trigger(e);
+            }
+        });
         return true;
     }else{
         return false;
