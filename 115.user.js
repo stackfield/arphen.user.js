@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          115
 // @namespace     https://arphen.github.io/
-// @version       0.2.20150309
+// @version       0.3.20150313
 // @description   Modify the page
 // @include       http*://115.com/*
 // @copyright     2015+, Arphen Lin
@@ -15,6 +15,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 var url = window.location.href;
 var filePath = "";
 var prevFolder = "";
+var viewImageMode = false;
 
 function log(text){
     try{
@@ -34,13 +35,10 @@ var tmrCheckImgClosed = null;
 function checkPath(){
     // if search box is not empty, bypass 
     var objs = $('iframe[rel*="wangpan"]').contents().find('#js_search_name_input');
-    if(objs.length<=0){
+    if(objs.length<=0) return;
+    if($(objs[0]).val() != ""){
+        log('search box = ' + $(objs[0]).val());
         return;
-    }else{
-        if($(objs[0]).val() != ""){
-            log('search box = ' + $(objs[0]).val());
-            return;
-        }
     }
 
     objs = $('iframe[rel*="wangpan"]').contents().find('div.file-path');
@@ -49,24 +47,26 @@ function checkPath(){
     var newPath = $(objs[0]).text();
     if(filePath != newPath){ // path changed
         filePath = newPath;
-        log('path = ' + filePath);        
+        log('path = ' + filePath); 
         checkFolder();
     }
 }
 
 function checkFolder(){
-    // check if any folder
-    var objs = $('iframe[rel*="wangpan"]').contents().find('a[rel="view_folder"]');
+    // check if any folder here
+    objs = $('iframe[rel*="wangpan"]').contents().find('a[rel="view_folder"]');
     if(objs.length>0){ 
-        if(prevFolder == "") return;
-        for(var i=0; i<objs.length; i++){
-            if($(objs[i]).text() == prevFolder && i<(objs.length-1)) {
-                log('goto next folder = ' + $(objs[i+1]).text());
-                objs[i+1].click();
-                break;
+        if(viewImageMode){  // if in image view mode, auto goto next folder
+            viewImageMode = false;
+            for(var i=0; i<objs.length; i++){
+                if($(objs[i]).text() == prevFolder && i<(objs.length-1)) {
+                    log('goto next folder = ' + $(objs[i+1]).text());
+                    objs[i+1].click();                    
+                    break;
+                }
             }
+            return;
         }
-        return;
     }
 
     // check if any file
@@ -74,19 +74,13 @@ function checkFolder(){
     if(objs.length <=0) { return false; }
 
     // show first jpg, jpeg
-    return showImage("jpg")? true : showImage("jpeg");
+    viewImageMode = showImage("jpg")? true : showImage("jpeg");
 }
 
 function showImage(img){
     objs = $('iframe[rel*="wangpan"]').contents().find('span.file-name a[title*=".'+img+'"]');
     if(objs.length>0){
-        objs[0].click(); // show image
-        // keep current folder name
-        objs = $('iframe[rel*="wangpan"]').contents().find('div.file-path a');
-        if(objs.length>0) {
-            prevFolder = $(objs[objs.length-1]).text();
-            log('prevFolder = ' + prevFolder);
-        }
+        objs[0].click(); // show image        
         // check if image closed
         tmrCheckImgClosed = setInterval(checkImgClosed, 1000);
         return true;
@@ -110,7 +104,11 @@ function checkImgClosed(){
 
 function returnToParentFolder(){
     var objs = $('iframe[rel*="wangpan"]').contents().find('div.file-path a');
-    if(objs.length<=0) return;
-
-    objs[objs.length-2].click();
+    if(objs.length>0) {
+        // keep current folder name
+        prevFolder = $(objs[objs.length-1]).text();
+        log('prevFolder = ' + prevFolder);
+        // return to previous folder
+        objs[objs.length-2].click();
+    }
 }
