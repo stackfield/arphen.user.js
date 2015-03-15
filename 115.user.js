@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          115
 // @namespace     https://arphen.github.io/
-// @version       0.5.20150313
+// @version       0.6.20150315
 // @description   Modify the page
 // @include       http*://115.com/*
 // @copyright     2015+, Arphen Lin
@@ -148,6 +148,9 @@ function returnToParentFolder(){
         // keep current folder name
         //prevFolder = $(objs[objs.length-1]).text();
         prevFolder = $(objs[objs.length-1]).attr('title');
+        if(!prevFolder){
+            prevFolder = $(objs[objs.length-1]).text();
+        }
         log('prevFolder = ' + prevFolder);
         // return to previous folder
         objs[objs.length-2].click();
