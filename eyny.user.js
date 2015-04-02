@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny Beautifier
 // @namespace     https://arphen.github.io/
-// @version       0.4.20150307
+// @version       0.5.20150402
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
@@ -16,7 +16,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 
 $('div#hd + table[width], td.forumlist').hide();
 $('div#pt, div#ft, div#pgt, div.hdc, div#f_pst, div.bm.bml.pbn, ul#thread_types').hide();
-$('h2 a img').hide();
+$('h2 a img, iframe, div.sitemajiad').hide();
 $('table[height="240"], table.t_p_top').hide();
 
 function hilite(){
