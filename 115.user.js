@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          115
 // @namespace     https://arphen.github.io/
-// @version       0.6.20150315
+// @version       0.7.20150403
 // @description   Modify the page
 // @include       http*://115.com/*
 // @copyright     2015+, Arphen Lin
@@ -31,6 +31,7 @@ function createImgController(){
     $($('body.frame-body')[0]).append('<div id="controllerWrapper"><input id="autoMode" type="checkbox">Auto Mode</div>');
     $('#controllerWrapper').css({
         position: "fixed", top: "0px", left: "0px", 
+		 zIndex: 9999999999,
         backgroundColor: "yellow", 
         border: "2px solid red",
         fontSize: "12px"});
