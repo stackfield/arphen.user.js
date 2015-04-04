@@ -1,7 +1,7 @@
-// ==UserScript==
+﻿// ==UserScript==
 // @name          Eyny Beautifier
 // @namespace     https://arphen.github.io/
-// @version       0.5.20150402
+// @version       0.6.20150404
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
@@ -22,7 +22,7 @@ $('table[height="240"], table.t_p_top').hide();
 function hilite(){
     $('h3.ptn a').each(function(){
         var s = $(this).text();
-        if(s.search(/(大橋未久|桜井あゆ|波多野結衣)/)>=0){
+        if(s.search(/(大橋未久|波多野結衣|羽田あい|一ノ瀬アメリ|桜井あゆ)/)>=0){
             //alert(s);
             var o = $(this).parent().parent();
             $(o).css({backgroundColor: "chartreuse", border: "1px solid red" });
