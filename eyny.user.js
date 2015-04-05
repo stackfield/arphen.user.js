@@ -22,7 +22,7 @@ $('table[height="240"], table.t_p_top').hide();
 function hilite(){
     $('h3.ptn a').each(function(){
         var s = $(this).text();
-        if(s.search(/(大橋未久|波多野結衣|羽田あい|一ノ瀬アメリ|桜井あゆ)/)>=0){
+        if(s.search(/(大橋未久|波多野結衣|羽田あい|一ノ瀬アメリ|涼川絢音|百合川さら|桜井あゆ)/)>=0){
             //alert(s);
             var o = $(this).parent().parent();
             $(o).css({backgroundColor: "chartreuse", border: "1px solid red" });

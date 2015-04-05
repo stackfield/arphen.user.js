@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          BTDigg
 // @namespace     https://arphen.github.io/
-// @version       0.2.20150308
+// @version       0.3.20150405
 // @description   Do something
 // @include       http*://btdigg.org/*
 // @copyright     2015+, Arphen Lin
@@ -21,12 +21,16 @@ $('a[title*="magnet"]').each(function(index){
     $(this).after('<a class="copylink" link="'+magnet+'">[Copy Link]</a>');
 });
 */
-
-$('a[title*="magnet"]').click(function(){
-    copyToClipboard( $(this).attr('href') );
-});
+function main(){
+    // note: .off("click") will clear previous bound click events firstly, then bind a new click event
+    $('a[title*="magnet"]').off("click").click(function(){
+        copyToClipboard( $(this).attr('href') );
+    });
+    setTimeout(main, 5000);
+}
 
 function copyToClipboard(text) {
     window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
 }
 
+main();
