@@ -18,6 +18,7 @@ function createContainer(){
         position: "fixed", top: "0px", right: "0px", 
         backgroundColor: "yellow", 
         border: "2px solid red",
+		"padding-left": "15px", "padding-right": "15px",
         fontSize: "20px"});    
 }
 
