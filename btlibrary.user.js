@@ -1,7 +1,7 @@
 ﻿// ==UserScript==
 // @name         BTLibrary
 // @namespace    https://arphen.github.io/
-// @version      0.1.20150621
+// @version      0.2.20150627
 // @description  Some modifications
 // @include       http://btlibrary.org/*
 // @copyright     2015+, Arphen Lin
@@ -14,6 +14,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 
 //var url = window.location.href;
 
-$('iframe').hide();
-$('#cs_left_couplet, #cs_right_couplet').hide();
+$('iframe').remove();
+$('#cs_left_couplet, #cs_right_couplet').remove();
+$('#__QQCP_LEFT_Div, #__QQCP_RIGHT_Div').remove();
 
