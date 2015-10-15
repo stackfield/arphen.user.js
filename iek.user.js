@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          IEK
 // @namespace     https://arphen.github.io/
-// @version       0.1.20151015
+// @version       0.2.20151015
 // @description   Modify the page
 // @include       http://ieknet.iek.org.tw/fullSearchNews.*
 // @copyright     2015+, Arphen Lin
@@ -17,7 +17,7 @@ function change(){
         var s = $(this).html();
         console.log(s);
         var o = $(this).parent().parent();
-        if(s.search("font")>=0){            
+        if(s.search(/font/)>=0){            
             $(o).css({backgroundColor: "#CCFFFF"});
         }else{
             $(o).css({backgroundColor: "#DDDDDD"});
