@@ -4,6 +4,7 @@
 // @version       0.2.20151109
 // @description   As I wish
 // @include       http://www.tw116.com/vod-*
+// @include       http://www.tw116.com/*vod-*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
