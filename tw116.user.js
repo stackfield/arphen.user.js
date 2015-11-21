@@ -1,8 +1,9 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name          TW116
 // @namespace     https://arphen.github.io/
-// @version       0.2.20151109
+// @version       0.3.20151121
 // @description   As I wish
+// @include       http://www.tw116.com/*
 // @include       http://www.tw116.com/vod-*
 // @include       http://www.tw116.com/*vod-*
 // @copyright     2015+, Arphen Lin
@@ -32,7 +33,7 @@ function goto(page){
 }
 
 function doit(){
-    $('#logo, div.htop, div.tbpic, #center, #footer').remove();
+    $('#logo, div.htop, div.tbpic, #center, #footer, #t365').remove();
 
     $('body').keydown(function(e){
         log('keydown = ' + e.which);
