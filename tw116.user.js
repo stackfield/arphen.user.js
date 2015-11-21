@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://arphen.github.io/
-// @version       0.7.20151121
+// @version       0.8.20151121
 // @description   As I wish
 // @include       http://www.tw116.com/*
-// @include       http://www.tw116.com/vod-*
-// @include       http://www.tw116.com/*vod-*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
 // @grant         none
 // ==/UserScript==
+/* jshint -W097 */
+'use strict';
 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
