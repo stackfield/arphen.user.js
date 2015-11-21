@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://arphen.github.io/
-// @version       0.5.20151121
+// @version       0.6.20151121
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @include       http://www.tw116.com/vod-*
