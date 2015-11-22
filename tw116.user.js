@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.0.20151121
+// @version       1.1.20151121
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -13,6 +13,29 @@
 'use strict';
 
 this.$ = this.jQuery = jQuery.noConflict(true);
+
+var VideoList = [
+    // anime
+    "全部成爲F",
+    "偵探小隊KZ",
+    "青年黑傑克",
+    "櫻子小姐的腳下",
+    "野良神第二季",
+    "魯邦三世新系列",
+    "終物語",
+    // TV
+    "僞裝夫妻",
+    "熟女正青春",
+    "下町火箭",
+    "掟上今日子的備忘錄",
+    "武士老師",
+    "孤獨的美食家第五季",
+    "遺産争族",
+    "診斷之眼",
+    "相棒第十四季",
+    // end
+    "=== END ==="
+];
 
 function log(text){
     try{
@@ -31,27 +54,6 @@ function goto(page){
         }
     });                    
 }
-
-var VideoList = [
-    // anime
-    "全部成爲F",
-    "偵探小隊KZ",
-    "青年黑傑克",
-    "櫻子小姐的腳下",
-    "野良神第二季",
-    // TV
-    "僞裝夫妻",
-    "熟女正青春",
-    "下町火箭",
-    "掟上今日子的備忘錄",
-    "武士老師",
-    "孤獨的美食家第五季",
-    "遺産争族",
-    "診斷之眼",
-    "相棒第十四季",
-    // end
-    "EENNDD"
-];
 
 function hilite(){
     $('div.mlist dl dt a').each(function(){
