@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.2.20151121
+// @version       1.3.20151121
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -10,7 +10,7 @@
 // @grant         none
 // ==/UserScript==
 /* jshint -W097 */
-'use strict';
+//'use strict';
 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
@@ -34,6 +34,7 @@ var VideoList = [
     "診斷之眼",
     "相棒第十四季",
     "TransitGirls",
+    "芈月傳",
     // end
     "=== END ==="
 ];
