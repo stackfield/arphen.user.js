@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.3.20151121
+// @version       1.4.20151210
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -23,6 +23,7 @@ var VideoList = [
     "野良神第二季",
     "魯邦三世新系列",
     "終物語",
+    "排球少年",
     // TV
     "僞裝夫妻",
     "熟女正青春",
