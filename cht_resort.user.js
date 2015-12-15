@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          CHT Resort
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.1.20151215
+// @version       1.0.20151215
 // @description   Booking the room
 // @include       http://resort.cht.com.tw/*
 // @copyright     2015+, Arphen Lin
@@ -32,10 +32,10 @@ function bookARoom(){
         log(s);
         log("price = " + price);
         var tr = $(this).parent().parent();
-        if(room.search(/(雙|二|兩|2)(人).*(房)/)>=0 && room.search(/(雅房|靠電梯)/)<0){           
+        if(room.search(/(雙|二|兩|2)(人).*(房)/)>=0 && room.search(/(雅房|靠電梯)/)<0){
             $(tr).css({backgroundColor: "#DF7401",
                        outline: "thin solid black"
-                      }); // set back color            
+                      }); // set back color
             if(price<currentPrice){
                 currentPrice = price;
                 currentRoom = this;
@@ -43,7 +43,7 @@ function bookARoom(){
         }else{
             $(tr).css({backgroundColor: "#6E6E6E",
                        outline: "thin solid black"
-                      }); // set back color                        
+                      }); // set back color
         }
     });
 
