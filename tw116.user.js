@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.6.20151215
+// @version       1.7.20151215
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -18,10 +18,10 @@ var VideoList = [
     // anime
     "全部成爲F",
     "偵探小隊KZ",
-    "青年黑傑克",
+    "黑傑克",
     "櫻子小姐的腳下",
     "野良神第二季",
-    "魯邦三世新系列",
+    "魯邦三世",
     "終物語",
     "排球少年",
     // TV
@@ -30,10 +30,10 @@ var VideoList = [
     "下町火箭",
     "掟上今日子的備忘錄",
     "武士老師",
-    "孤獨的美食家第五季",
+    "孤獨的美食家",
     "遺産争族",
     "診斷之眼",
-    "相棒第十四季",
+    "相棒",
     "TransitGirls",
     "芈月傳",
     "鄉村愛情",
