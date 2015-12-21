@@ -1,43 +1,19 @@
 // ==UserScript==
 // @name          123KUBO
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.1.20151207
+// @version       0.2.20151221
 // @description   As I wish
 // @include       http://www.123kubo.com/*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
+// @require       http://arphen.github.io/user_script_libs/video.js
 // @grant         none
 // ==/UserScript==
 /* jshint -W097 */
 //'use strict';
 
 this.$ = this.jQuery = jQuery.noConflict(true);
-
-var VideoList = [
-    // anime
-    "全部成爲F",
-    "偵探小隊KZ",
-    "青年黑傑克",
-    "櫻子小姐的腳下",
-    "野良神第二季",
-    "魯邦三世新系列",
-    "終物語",
-    // TV
-    "僞裝夫妻",
-    "熟女正青春",
-    "下町火箭",
-    "掟上今日子的備忘錄",
-    "武士老師",
-    "孤獨的美食家第五季",
-    "遺産争族",
-    "診斷之眼",
-    "相棒第十四季",
-    "TransitGirls",
-    "芈月傳",
-    // end
-    "=== END ==="
-];
 
 function log(text){
     try{
