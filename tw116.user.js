@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.9.20151222
+// @version       2.0.20151222
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -30,7 +30,7 @@ function goto(page){
             this.click();
             return false; // break .each() loop
         }
-    });                    
+    });
 }
 
 function hilite(){
@@ -45,7 +45,7 @@ function hilite(){
         if(re.test(s)){
             var o = $(this).parent().parent().parent();
             $(o).css({backgroundColor: "#550055"}); // set back color
-        }     
+        }
     });
 }
 
