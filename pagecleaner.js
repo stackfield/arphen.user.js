@@ -3,8 +3,7 @@
 // @namespace     https://github.com/arphen/arphen.user.js
 // @version       0.1.20151226
 // @description   get a clean page
-// @include       http://health.businessweekly.com.tw/AArticle.aspx*
-// @include       http://www.teepr.com*
+// @include       http*://*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
