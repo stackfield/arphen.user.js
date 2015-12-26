@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.1.20151226
+// @version       0.2.20151226
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -12,7 +12,7 @@
 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
-var url = window.location.href;
+var url = window.location.href.toLowerCase();
 
 function log(text){
     try{
@@ -43,9 +43,9 @@ function main(){
         var isMatch = false;
         if(site.url !== ""){
             //isMatch = url.search(site.url);
-            isMatch = (url.indexOf(site.url) >= 0);
+            isMatch = (url.indexOf(site.url.toLowerCase()) >= 0);
         }else if(site.regx !== ""){
-            var re = new RegExp(site.regx);
+            var re = new RegExp(site.regx, "i");
             isMatch = re.test(url);
         }
 
