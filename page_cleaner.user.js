@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.3.20151226
+// @version       0.4.20151226
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -24,6 +24,12 @@ function log(text){
 }
 
 var SiteDB = [
+    {
+        "name": "UDN",
+        "url": "udn.com/news/story/",
+        "regx": "",
+        "css": "#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *"
+    },
     {
         "name": "良醫健康網",
         "url": "health.businessweekly.com.tw/AArticle.aspx",
