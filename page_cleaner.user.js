@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.2.20151226
+// @version       0.3.20151226
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -16,7 +16,9 @@ var url = window.location.href.toLowerCase();
 
 function log(text){
     try{
-        console.log('[PageCleaner] ' + text);
+        var d = new Date();
+        var n = d.toLocaleString();
+        console.log(n + ' [PageCleaner] ' + text);
     }catch(err){
     }
 }
@@ -33,14 +35,25 @@ var SiteDB = [
         "url": "www.teepr.com",
         "regx": "",
         "css": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+    },
+    {
+        "name": "Pixnet",
+        "url": ".pixnet.net/blog",
+        "regx": "",
+        "css": "div#idle-pop",
+        "isRepeat": true,
+        "repeatInterval": 3000
     }
-
 ];
 
-function main(){
+var MatchedSite = null;
+var Initialized = false;
+
+function findSite(){
+    var isMatch = false;
+    var site;
     for(var i=0; i<SiteDB.length; i++){
-        var site = SiteDB[i];
-        var isMatch = false;
+        site = SiteDB[i];
         if(site.url !== ""){
             //isMatch = url.search(site.url);
             isMatch = (url.indexOf(site.url.toLowerCase()) >= 0);
@@ -49,10 +62,28 @@ function main(){
             isMatch = re.test(url);
         }
 
-        if(isMatch){
-            log(site.name);
-            $(site.css).remove();
-            break;
+        if(isMatch) break;
+    }
+
+    return (isMatch? site : null);
+}
+
+function removeCss(){
+    log(MatchedSite.name);
+    $(MatchedSite.css).remove();
+}
+
+function main(){
+    if(!Initialized){
+        MatchedSite = findSite();
+        Initialized = true;
+    }
+
+    if(MatchedSite !== null){
+        removeCss();
+
+        if(MatchedSite.isRepeat){
+            setInterval(removeCss, MatchedSite.repeatInterval);
         }
     }
 }
