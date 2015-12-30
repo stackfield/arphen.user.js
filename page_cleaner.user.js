@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.4.20151226
+// @version       0.5.20151230
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -41,6 +41,14 @@ var SiteDB = [
         "url": "www.teepr.com",
         "regx": "",
         "css": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+    },
+    {
+        "name": "T客邦",
+        "url": "www.techbang.com/posts/",
+        "regx": "",
+        "css": "#header, #footer, #stickies, #sidebar, .post-header-additional, #div-inread-ad, #div-inread-ad ~ *, #post-additional, #post-additional ~ *",
+        "isRepeat": true,
+        "repeatInterval": 3000
     },
     {
         "name": "Pixnet",
