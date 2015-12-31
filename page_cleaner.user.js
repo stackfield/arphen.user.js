@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.6.20151231
+// @version       0.7.20151231
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -41,6 +41,20 @@ var SiteDB = [
         "url": "www.teepr.com",
         "regx": "",
         "css": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+    },
+    {
+        "name": "Facebook",
+        "url": "facebook.com",
+        "regx": "",
+        "css": "div[data-ownerid]",
+        "isRepeat": true,
+        "repeatInterval": 10000
+    },
+    {
+        "name": "電腦王阿達",
+        "url": "www.kocpc.com.tw/archives/",
+        "regx": "",
+        "css": "#header, #sidebar, .breadcrumb, .w2bslikebox, #share_button, #jp-relatedposts, #jp-relatedposts ~ *, article footer, #comments, #footer"
     },
     {
         "name": "artFido",
