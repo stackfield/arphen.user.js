@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.7.20151231
+// @version       0.8.20151231
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -41,6 +41,12 @@ var SiteDB = [
         "url": "www.teepr.com",
         "regx": "",
         "css": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+    },
+    {
+        "name": "TechNews",
+        "url": "technews.tw/20",
+        "regx": "",
+        "css": "#masthead, #secondary, .socialcount, .sharefbline, .sharefbline ~ *, nav, nav ~ *, footer, #jj-prev-post, #jj-next-post"
     },
     {
         "name": "Facebook",
