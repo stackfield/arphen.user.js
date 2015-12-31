@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.5.20151230
+// @version       0.6.20151231
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -41,6 +41,14 @@ var SiteDB = [
         "url": "www.teepr.com",
         "regx": "",
         "css": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+    },
+    {
+        "name": "artFido",
+        "url": "www.artfido.com/blog/",
+        "regx": "",
+        "css": "#header, .top-ad-holder, #sidebar, .post-pagination ~ *, iframe, .addthis_toolbox, img[alt~=ArtFido]",
+        "isRepeat": true,
+        "repeatInterval": 3000
     },
     {
         "name": "T客邦",
