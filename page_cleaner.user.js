@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.8.20151231
+// @version       0.7.20151231
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -35,6 +35,12 @@ var SiteDB = [
         "url": "health.businessweekly.com.tw/AArticle.aspx",
         "regx": "",
         "css": "#fixed_header, #header, #footer, #statustop, #aside, .container, .articleinfo, .articlecontent ~ *"
+    },
+    {
+        "name": "PanSci",
+        "url": "pansci.asia/archives/",
+        "regx": "",
+        "css": "#banner_container, #header_container, #categories_container, #fixed_menu, div.links, div.sticky_left, div.wpbcap, div.wpbcap ~ *, footer, footer ~ *, div.container-fluid, div.copyright, div.about_author, div.comments_wrap"
     },
     {
         "name": "Teepr",
