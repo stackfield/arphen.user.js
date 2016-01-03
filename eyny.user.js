@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.0.20160103
+// @version       1.1.20160103
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
@@ -36,10 +36,14 @@ function hilite(){
     $('h3.ptn a').each(function(){
         var s = $(this).text();
         var o;
-        if(s.search(/(大橋未久|波多野|羽田愛|羽田あい|一ノ瀬アメリ|百合川|前田|涼川|佐々木愛美|遠山雪菜|岡田優子|有賀|三上)/)>=0){
+        if(s.search(/(新人|引退|大橋未久|波多野|羽田愛|羽田あい|一ノ瀬アメリ|百合川|前田|美雪|希志|julia|涼川|佐々木愛美|遠山雪菜|岡田優子|有賀|三上)/i)>=0){
             //alert(s);
-            o = $(this).parent().parent();
-            $(o).css({backgroundColor: "chartreuse", border: "1px solid red" });
+            if(s.search(/(新人)/)>=0 && s.search(/(人妻)/)>=0){
+                // pass 最新人妻
+            }else{
+                o = $(this).parent().parent();
+                $(o).css({backgroundColor: "chartreuse", border: "1px solid red" });
+            }
         }
         if(s.search(/(無碼)/)>=0){
             //alert(s);
