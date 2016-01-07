@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.8.20160101
+// @version       0.9.20160107
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -27,68 +27,74 @@ var SiteDB = [
     {
         "name": "UDN",
         "url": "udn.com/news/story/",
-        "regx": "",
-        "css": "#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *"
+        "url_regx": "",
+        "css_remove": "#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *"
     },
     {
         "name": "良醫健康網",
         "url": "health.businessweekly.com.tw/AArticle.aspx",
-        "regx": "",
-        "css": "#fixed_header, #header, #footer, #statustop, #aside, .container, .articleinfo, .articlecontent ~ *"
+        "url_regx": "",
+        "css_remove": "#fixed_header, #header, #footer, #statustop, #aside, .container, .articleinfo, .articlecontent ~ *"
     },
     {
         "name": "PanSci",
         "url": "pansci.asia/archives/",
-        "regx": "",
-        "css": "#banner_container, #header_container, #categories_container, #fixed_menu, div.links, div.sticky_left, div.wpbcap, div.wpbcap ~ *, footer, footer ~ *, div.container-fluid, div.copyright, div.about_author, div.comments_wrap"
+        "url_regx": "",
+        "css_remove": "#banner_container, #header_container, #categories_container, #fixed_menu, div.links, div.sticky_left, div.wpbcap, div.wpbcap ~ *, footer, footer ~ *, div.container-fluid, div.copyright, div.about_author, div.comments_wrap"
     },
     {
         "name": "Teepr",
         "url": "www.teepr.com",
-        "regx": "",
-        "css": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+        "url_regx": "",
+        "css_remove": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
     },
     {
         "name": "TechNews",
         "url": "technews.tw/20",
-        "regx": "",
-        "css": "#masthead, #secondary, .socialcount, .sharefbline, .sharefbline ~ *, nav, nav ~ *, footer, #jj-prev-post, #jj-next-post"
+        "url_regx": "",
+        "css_remove": "#masthead, #secondary, .socialcount, .sharefbline, .sharefbline ~ *, nav, nav ~ *, footer, #jj-prev-post, #jj-next-post"
     },
     {
         "name": "Facebook",
         "url": "facebook.com",
-        "regx": "",
-        "css": "div[data-ownerid]",
+        "url_regx": "",
+        "css_remove": "div[data-ownerid]",
         "isRepeat": true,
         "repeatInterval": 10000
     },
     {
         "name": "電腦王阿達",
         "url": "www.kocpc.com.tw/archives/",
-        "regx": "",
-        "css": "#header, #sidebar, .breadcrumb, .w2bslikebox, #share_button, #jp-relatedposts, #jp-relatedposts ~ *, article footer, #comments, #footer"
+        "url_regx": "",
+        "css_remove": "#header, #sidebar, .breadcrumb, .w2bslikebox, #share_button, #jp-relatedposts, #jp-relatedposts ~ *, article footer, #comments, #footer"
+    },
+    {
+        "name": "tabletennisdb",
+        "url": "www.tabletennisdb.com",
+        "url_regx": "",
+        "css_newWin": "a"
     },
     {
         "name": "artFido",
         "url": "www.artfido.com/blog/",
-        "regx": "",
-        "css": "#header, .top-ad-holder, #sidebar, .post-pagination ~ *, iframe, .addthis_toolbox, img[alt~=ArtFido]",
+        "url_regx": "",
+        "css_remove": "#header, .top-ad-holder, #sidebar, .post-pagination ~ *, iframe, .addthis_toolbox, img[alt~=ArtFido]",
         "isRepeat": true,
         "repeatInterval": 3000
     },
     {
         "name": "T客邦",
         "url": "www.techbang.com/posts/",
-        "regx": "",
-        "css": "#header, #footer, #stickies, #sidebar, .post-header-additional, #div-inread-ad, #div-inread-ad ~ *, #post-additional, #post-additional ~ *",
+        "url_regx": "",
+        "css_remove": "#header, #footer, #stickies, #sidebar, .post-header-additional, #div-inread-ad, #div-inread-ad ~ *, #post-additional, #post-additional ~ *",
         "isRepeat": true,
         "repeatInterval": 3000
     },
     {
         "name": "Pixnet",
         "url": ".pixnet.net/blog",
-        "regx": "",
-        "css": "div#idle-pop",
+        "url_regx": "",
+        "css_remove": "div#idle-pop",
         "isRepeat": true,
         "repeatInterval": 3000
     }
@@ -105,8 +111,8 @@ function findSite(){
         if(site.url !== ""){
             //isMatch = url.search(site.url);
             isMatch = (url.indexOf(site.url.toLowerCase()) >= 0);
-        }else if(site.regx !== ""){
-            var re = new RegExp(site.regx, "i");
+        }else if(site.url_regx !== ""){
+            var re = new RegExp(site.url_regx, "i");
             isMatch = re.test(url);
         }
 
@@ -116,9 +122,21 @@ function findSite(){
     return (isMatch? site : null);
 }
 
-function removeCss(){
+function doit(){
     log(MatchedSite.name);
-    $(MatchedSite.css).remove();
+
+    // remove elements
+    if(MatchedSite.css_remove !== null){
+        $(MatchedSite.css_remove).remove();
+    }
+
+    // open link in new window
+    if(MatchedSite.css_newWin !== null){
+        $(MatchedSite.css_newWin).each(function( index ) {
+            $(this).attr("target", "_blank");
+        });
+    }
+
 }
 
 function main(){
@@ -128,10 +146,10 @@ function main(){
     }
 
     if(MatchedSite !== null){
-        removeCss();
+        doit();
 
         if(MatchedSite.isRepeat){
-            setInterval(removeCss, MatchedSite.repeatInterval);
+            setInterval(doit, MatchedSite.repeatInterval);
         }
     }
 }
