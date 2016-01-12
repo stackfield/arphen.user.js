@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.9.20160107
+// @version       1.0.20160112
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -73,6 +73,16 @@ var SiteDB = [
         "url": "www.tabletennisdb.com",
         "url_regx": "",
         "css_newWin": "a"
+    },
+    {
+        "name": "ESPN",
+        "url": "espn.go.com/nba/scoreboard",
+        "url_regx": "",
+        "css_remove": "#global-scoreboard, div.container, #global-nav",
+        "css_customize": {
+            "selector": "#pane-main",
+            "style": "padding-top: 50px"
+        }
     },
     {
         "name": "artFido",
