@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.0.20160112
+// @version       1.1.20160113
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -79,10 +79,14 @@ var SiteDB = [
         "url": "espn.go.com/nba/scoreboard",
         "url_regx": "",
         "css_remove": "#global-scoreboard, div.container, #global-nav",
-        "css_customize": {
-            "selector": "#pane-main",
-            "style": "padding-top: 50px"
-        }
+        "css_free": [
+            {
+                "selector": "#pane-main",
+                "css": {
+                    "padding-top": "50px"
+                }
+            }
+        ]
     },
     {
         "name": "artFido",
@@ -145,6 +149,14 @@ function doit(){
         $(MatchedSite.css_newWin).each(function( index ) {
             $(this).attr("target", "_blank");
         });
+    }
+
+    // apply free format css
+    if(MatchedSite.css_free !== null && MatchedSite.css_free.length > 0){
+        for(var i=0; i<MatchedSite.css_free.length; i++){
+            var o = MatchedSite.css_free[i];
+            $(o.selector).css(o.css);
+        }
     }
 
 }
