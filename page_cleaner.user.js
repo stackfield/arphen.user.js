@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       1.1.20160113
+// @version       1.2.20160116
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -25,54 +25,12 @@ function log(text){
 
 var SiteDB = [
     {
-        "name": "UDN",
-        "url": "udn.com/news/story/",
+        "name": "artFido",
+        "url": "www.artfido.com/blog/",
         "url_regx": "",
-        "css_remove": "#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *"
-    },
-    {
-        "name": "良醫健康網",
-        "url": "health.businessweekly.com.tw/AArticle.aspx",
-        "url_regx": "",
-        "css_remove": "#fixed_header, #header, #footer, #statustop, #aside, .container, .articleinfo, .articlecontent ~ *"
-    },
-    {
-        "name": "PanSci",
-        "url": "pansci.asia/archives/",
-        "url_regx": "",
-        "css_remove": "#banner_container, #header_container, #categories_container, #fixed_menu, div.links, div.sticky_left, div.wpbcap, div.wpbcap ~ *, footer, footer ~ *, div.container-fluid, div.copyright, div.about_author, div.comments_wrap"
-    },
-    {
-        "name": "Teepr",
-        "url": "www.teepr.com",
-        "url_regx": "",
-        "css_remove": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
-    },
-    {
-        "name": "TechNews",
-        "url": "technews.tw/20",
-        "url_regx": "",
-        "css_remove": "#masthead, #secondary, .socialcount, .sharefbline, .sharefbline ~ *, nav, nav ~ *, footer, #jj-prev-post, #jj-next-post"
-    },
-    {
-        "name": "Facebook",
-        "url": "facebook.com",
-        "url_regx": "",
-        "css_remove": "div[data-ownerid]",
+        "css_remove": "#header, .top-ad-holder, #sidebar, .post-pagination ~ *, iframe, .addthis_toolbox, img[alt~=ArtFido]",
         "isRepeat": true,
-        "repeatInterval": 10000
-    },
-    {
-        "name": "電腦王阿達",
-        "url": "www.kocpc.com.tw/archives/",
-        "url_regx": "",
-        "css_remove": "#header, #sidebar, .breadcrumb, .w2bslikebox, #share_button, #jp-relatedposts, #jp-relatedposts ~ *, article footer, #comments, #footer"
-    },
-    {
-        "name": "tabletennisdb",
-        "url": "www.tabletennisdb.com",
-        "url_regx": "",
-        "css_newWin": "a"
+        "repeatInterval": 3000
     },
     {
         "name": "ESPN",
@@ -89,12 +47,50 @@ var SiteDB = [
         ]
     },
     {
-        "name": "artFido",
-        "url": "www.artfido.com/blog/",
+        "name": "Facebook",
+        "url": "facebook.com",
         "url_regx": "",
-        "css_remove": "#header, .top-ad-holder, #sidebar, .post-pagination ~ *, iframe, .addthis_toolbox, img[alt~=ArtFido]",
+        "css_remove": "div[data-ownerid]",
+        "isRepeat": true,
+        "repeatInterval": 10000
+    },
+    {
+        "name": "PanSci",
+        "url": "pansci.asia/archives/",
+        "url_regx": "",
+        "css_remove": "#banner_container, #header_container, #categories_container, #fixed_menu, div.links, div.sticky_left, div.wpbcap, div.wpbcap ~ *, footer, footer ~ *, div.container-fluid, div.copyright, div.about_author, div.comments_wrap"
+    },
+    {
+        "name": "Pixnet",
+        "url": ".pixnet.net/blog",
+        "url_regx": "",
+        "css_remove": "div#idle-pop",
         "isRepeat": true,
         "repeatInterval": 3000
+    },
+    {
+        "name": "tabletennisdb",
+        "url": "www.tabletennisdb.com",
+        "url_regx": "",
+        "css_newWin": "a"
+    },
+    {
+        "name": "TechNews",
+        "url": "technews.tw/20",
+        "url_regx": "",
+        "css_remove": "#masthead, #secondary, .socialcount, .sharefbline, .sharefbline ~ *, nav, nav ~ *, footer, #jj-prev-post, #jj-next-post"
+    },
+    {
+        "name": "Teepr",
+        "url": "www.teepr.com",
+        "url_regx": "",
+        "css_remove": ".main-header, .secondary-navigation, #top-navigation, .sidebar, #content_box header, .copyrights, .wf-formTpl, .wf-formTpl~*, .post~*, #popmake-overlay, div.popmake"
+    },
+    {
+        "name": "TW116",
+        "url": "www.tw116.com",
+        "url_regx": "",
+        "css_remove": "#logo, div.htop, div.tbpic, #center, #footer, #t365"
     },
     {
         "name": "T客邦",
@@ -105,12 +101,22 @@ var SiteDB = [
         "repeatInterval": 3000
     },
     {
-        "name": "Pixnet",
-        "url": ".pixnet.net/blog",
+        "name": "UDN",
+        "url": "udn.com/news/story/",
         "url_regx": "",
-        "css_remove": "div#idle-pop",
-        "isRepeat": true,
-        "repeatInterval": 3000
+        "css_remove": "#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *"
+    },
+    {
+        "name": "電腦王阿達",
+        "url": "www.kocpc.com.tw/archives/",
+        "url_regx": "",
+        "css_remove": "#header, #sidebar, .breadcrumb, .w2bslikebox, #share_button, #jp-relatedposts, #jp-relatedposts ~ *, article footer, #comments, #footer"
+    },
+    {
+        "name": "良醫健康網",
+        "url": "health.businessweekly.com.tw/AArticle.aspx",
+        "url_regx": "",
+        "css_remove": "#fixed_header, #header, #footer, #statustop, #aside, .container, .articleinfo, .articlecontent ~ *"
     }
 ];
 
