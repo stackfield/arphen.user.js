@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny Torrent
 // @namespace     https://arphen.github.io/
-// @version       0.3.20150412
+// @version       0.4.20160117
 // @description   Move torrent link to top, auto close window after downloading torrent.
 // @include       http://*.eyny.com/forum.php*
 // @copyright     2015+, Arphen Lin
@@ -15,7 +15,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 function createContainer(){
     $('body').append('<div id="torrent"></div>');
     $('#torrent').css({
-        position: "fixed", top: "0px", right: "0px", 
+        position: "fixed", top: "50px", right: "0px", 
         backgroundColor: "yellow", 
         border: "2px solid red",
 		"padding-left": "15px", "padding-right": "15px",
