@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js
-// @version       2.1.20160117
+// @version       2.2.20160117
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -17,6 +17,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 var VideoList = [
 	// anime
 	"暗殺教室",
+	"排球少年",
 	"全部成爲F",
 	"偵探小隊KZ",
 	"黑傑克",
@@ -24,8 +25,9 @@ var VideoList = [
 	"野良神第二季",
 	"魯邦三世",
 	"終物語",
-	"排球少年",
 	// TV
+	"福爾摩斯",
+	"黑名單",
 	"僞裝夫妻",
 	"熟女正青春",
 	"下町火箭",
@@ -33,12 +35,10 @@ var VideoList = [
 	"武士老師",
 	"孤獨的美食家",
 	"遺産争族",
-	"診斷之眼",
 	"相棒",
 	"TransitGirls",
 	"芈月傳",
 	"鄉村愛情",
-	"福爾摩斯",
 	// end
 	"=== END ==="
 ];
