@@ -9,6 +9,7 @@
 // @match        http*://*/*
 // @exclude      *.netflix.com/*
 // @exclude      *github.com/*
+// @exclude      *openuserjs.org/*
 // @grant        GM_addStyle
 // ==/UserScript==
 
