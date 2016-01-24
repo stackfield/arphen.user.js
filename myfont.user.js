@@ -2,7 +2,7 @@
 // @name         MyFont
 // @namespace    https://github.com/arphen/arphen.user.js
 // @homepage     https://github.com/arphen/arphen.user.js
-// @version      0.3.20160118
+// @version      0.4.20160124
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
@@ -11,6 +11,7 @@
 // @exclude      *github.com/*
 // @exclude      *openuserjs.org/*
 // @exclude      *taobao.com*
+// @exclude      *naxosmusiclibrary.com*
 // @grant        GM_addStyle
 // ==/UserScript==
 
