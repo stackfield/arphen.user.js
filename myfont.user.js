@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         MyFont
-// @namespace    https://github.com/arphen/arphen.user.js
-// @homepage     https://github.com/arphen/arphen.user.js
-// @version      0.6.20160127
+// @namespace    https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
+// @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
+// @version      0.7.20160127
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
