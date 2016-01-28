@@ -7,9 +7,9 @@
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
 // @match        http*://*/*
-// @exclude      *.netflix.com/*
-// @exclude      *github.com/*
-// @exclude      *openuserjs.org/*
+// @exclude      *netflix.com*
+// @exclude      *github.com*
+// @exclude      *openuserjs.org*
 // @exclude      *taobao.com*
 // @exclude      *naxosmusiclibrary.com*
 // @exclude      *hackpad.com*
