@@ -2,7 +2,7 @@
 // @name          Page Cleaner
 // @homepage      https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       1.5.20160127
+// @version       1.6.20160128
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -126,6 +126,12 @@ var SiteDB = [
 		"url": "health.businessweekly.com.tw/AArticle.aspx",
 		"url_regx": "",
 		"css_remove": "#fixed_header, #header, #footer, #statustop, #aside, .container, .articleinfo, .articlecontent ~ *"
+	},
+	{
+		"name": "露天拍賣",
+		"url": "ruten.com.tw",
+		"url_regx": "",
+		"css_newWin": "a"
 	}
 ];
 
