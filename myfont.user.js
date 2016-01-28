@@ -2,7 +2,7 @@
 // @name         MyFont
 // @namespace    https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      1.0.20160127
+// @version      1.1.20160128
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
