@@ -2,7 +2,7 @@
 // @name          Page Cleaner
 // @homepage      https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       1.6.20160128
+// @version       1.7.20160129
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -131,6 +131,7 @@ var SiteDB = [
 		"name": "露天拍賣",
 		"url": "ruten.com.tw",
 		"url_regx": "",
+		"css_remove": "#bestgoods_div, div.rt-store-ad",
 		"css_newWin": "a"
 	}
 ];
