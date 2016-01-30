@@ -2,7 +2,7 @@
 // @name          Page Cleaner
 // @homepage      https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       1.7.20160129
+// @version       2.0.20160130
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -105,7 +105,7 @@ var SiteDB = [
 		"name": "UDN",
 		"url": "udn.com/",
 		"url_regx": "",
-		"css_remove": "#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *, #channel ~ *, #show_box",
+		"css_remove": '#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *, #channel ~ *, #show_box, div[id^="ad_"]',
 		"css_free": [
 			{
 				"selector": "#header",
