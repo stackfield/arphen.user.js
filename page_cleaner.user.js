@@ -2,7 +2,7 @@
 // @name          Page Cleaner
 // @homepage      https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       2.0.20160201
+// @version       2.0.20160203
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -49,7 +49,7 @@ var SiteDB = [
 	},
 	{
 		"name": "Facebook",
-		"url": "facebook.com",
+		"url": "-facebook.com",
 		"url_regx": "",
 		"css_remove": "div[data-ownerid]",
 		"isRepeat": true,
