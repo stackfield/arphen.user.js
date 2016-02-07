@@ -2,7 +2,7 @@
 // @name         MyFont
 // @namespace    https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      1.1.20160128
+// @version      2.0.20160207
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
@@ -25,7 +25,8 @@
 	'use strict';
 
 	// Your code here...
-	var css = '* { font-family: "微軟正黑體", "微软雅黑", "黑体", "helvetica neue", "lucida grande", helvetica, arial, sans-serif !important;	}';
+	//var css = '* { font-family: ebrima, gadugi, "lao ui", "leelawadee ui", "meiryo ui", "segoe ui", Arial, Meiryo, "microsoft jhenghei ui", "微軟正黑體", "microsoft yahei", "microsoft yahei ui" !important; }';
+	var css = '* { font-family: "segoe ui", "microsoft jhenghei" !important; }';
 
 	GM_addStyle(css);
 })();
