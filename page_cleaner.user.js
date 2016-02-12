@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
-// @homepage      https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       2.0.20160203
+// @version       2.0.20160213
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -25,6 +24,29 @@ function log(text){
 }
 
 var SiteDB = [
+	{
+		"name": "7-11",
+		"url": "eservice.7-11.com.tw/E-Tracking/search.aspx",
+		"url_regx": "",
+		"css_remove": "table[height=647] > tbody > tr:first-child, td[height=19], td[width=256]",
+		"css_free": [
+			{
+				"selector": 'form',
+				"css": {
+					"visibility": "hidden"
+				}
+			},
+			{
+				"selector": 'table[bgcolor="#A4A4A4"], table[bgcolor="#65CE8E"]',
+				"css": {
+					"position": "fixed",
+					"left": "5px",
+					"top": "5px",
+					"visibility": "visible"
+				}
+			}
+		]
+	},
 	{
 		"name": "artFido",
 		"url": "www.artfido.com/blog/",
