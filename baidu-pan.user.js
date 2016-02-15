@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Baidu Pan
-// @namespace     https://github.com/arphen/arphen.user.js/blob/master/baidu.user.js
-// @version       0.1.20151109
+// @namespace     https://github.com/arphen/arphen.user.js/blob/master/baidu-pan.user.js
+// @version       1.0.20160215
 // @description   As I wish
 // @include       http://pan.baidu.com/s*
 // @copyright     2015+, Arphen Lin
