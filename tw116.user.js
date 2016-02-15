@@ -1,8 +1,7 @@
 // ==UserScript==
 // @name          TW116
-// @homepage      https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       2.4.20160128
+// @version       2.5.20160215
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -16,7 +15,9 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 
 function log(text){
 	try{
-		console.log('[TW116] ' + text);
+		var d = new Date();
+		var n = d.toLocaleString();
+		console.log(n + ' [TW116] ' + text);
 	}catch(err){
 	}
 }
@@ -48,12 +49,29 @@ function hilite(){
 	});
 }
 
+function baiduLink(){
+	//$('div.movie a[href~="baidu"]').each(function(){
+	$('div.movie a[href^="http://pan.baidu.com"]').each(function(){
+		var s = $(this).text();
+		log(s);
+		if(s.indexOf('密碼') > 0){
+			s = s.trim();
+			acc_code = s.substr(s.length-4, 4);
+			log('密碼=' + acc_code);
+			var href = $(this).attr('href');
+			$(this).attr("href", href + '&acc_code=' + acc_code); // todo: 百度縮址加上acc_code沒用! 要設法取得真網址
+		}
+	});
+}
+
 
 function main(){
 	//$('#logo, div.htop, div.tbpic, #center, #footer, #t365').remove();
 
 	// hilite
 	hilite();
+
+	baiduLink();
 
 	$('body').keydown(function(e){
 		log('keydown = ' + e.which);
