@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Baidu Pan
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/baidu-pan.user.js
-// @version       1.0.20160215
+// @version       1.1.20160217
 // @description   As I wish
 // @include       http://pan.baidu.com/s*
 // @copyright     2015+, Arphen Lin
@@ -34,22 +34,45 @@ function parse(val) {
 
 
 var url = window.location.href.toLowerCase();
+var pwd = "";
 
-function main(){
-	var acc_code = parse("acc_code");
-	log(acc_code);
-	if(acc_code === "") return;
+function main_old(){
+	var pwd = parse("pwd");
+	log(pwd);
+	if(pwd === "") return;
 
 	// not work on baidu
 	if(url.indexOf('pan.baidu.com/s') >= 0){
-		$('input#accessCode').val(acc_code);
+		$('input#accessCode').val(pwd);
 		//alert(code);
 		var t = $($('input#accessCode')[0]).val();
-		if(t === acc_code){
+		if(t === pwd){
 			$('a#submitBtn')[0].click();
 		}
 	}
 }
 
+function getMessage(event){
+	log('data= ' + event.data + '; origin= ' + event.origin);
+
+	if(pwd !== "") return;
+
+	if (event.origin.indexOf('www.tw116.com') >=0 ) {
+		//alert('data= ' + event.data + '; origin= ' + event.origin);
+		pwd = event.data;
+
+		$('input#accessCode').val(pwd);
+		//alert(code);
+		var t = $($('input#accessCode')[0]).val();
+		if(t === pwd){
+			$('a#submitBtn')[0].click();
+		}
+	}
+}
+
+function main(){
+	window.addEventListener('message', getMessage);
+}
+
 main();
-setInterval(main, 2000);
+//setInterval(main, 2000);
