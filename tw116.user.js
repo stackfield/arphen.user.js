@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       2.6.20160217
+// @version       2.7.20160218
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
+// @require       http://arphen.github.io/user_script_libs/utility.js
 // @require       http://arphen.github.io/user_script_libs/video.js
 // @grant         none
 // ==/UserScript==
@@ -14,12 +15,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 function log(text){
-	try{
-		var d = new Date();
-		var n = d.toLocaleString();
-		console.log(n + ' [TW116] ' + text);
-	}catch(err){
-	}
+	myLog.log(text);
 }
 
 function addScript(url) {
@@ -147,8 +143,11 @@ function inpage_openBaiduPan(){
 
 
 function main(){
+	// use myLog
+	myLog.init('TW116');
+
 	// inject jquery in page
-	addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');
+	addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');  // 允許插入和原page不同domain的js
 
 	// inject my code in page
 	var script = document.createElement('script');
