@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       2.0.20160213
+// @version       2.1.20160218
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
+// @require       http://arphen.github.io/user_script_libs/utility.js
 // @grant         none
 // ==/UserScript==
 
@@ -15,12 +16,7 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 var url = window.location.href.toLowerCase();
 
 function log(text){
-	try{
-		var d = new Date();
-		var n = d.toLocaleString();
-		console.log(n + ' [PageCleaner] ' + text);
-	}catch(err){
-	}
+	myLog.log(text);
 }
 
 var SiteDB = [
@@ -215,6 +211,8 @@ function doit(){
 }
 
 function main(){
+	myLog.init('PageCleaner');
+
 	if(!Initialized){
 		MatchedSite = findSite();
 		Initialized = true;
