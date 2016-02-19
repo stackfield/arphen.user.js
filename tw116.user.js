@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       2.7.20160218
+// @version       2.8.20160219
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -150,9 +150,7 @@ function main(){
 	addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');  // 允許插入和原page不同domain的js
 
 	// inject my code in page
-	var script = document.createElement('script');
-	script.appendChild(document.createTextNode('var win; ' + inpage_openBaiduPan));
-	(document.body || document.head || document.documentElement).appendChild(script);
+	addScriptCode('var win; ' + inpage_openBaiduPan);
 
 	// hilite
 	hilite();
