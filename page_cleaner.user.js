@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       2.1.20160218
+// @version       2.0.20160213
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
@@ -55,6 +55,7 @@ var SiteDB = [
 		"name": "ESPN",
 		"url": "espn.go.com/nba/scoreboard",
 		"url_regx": "",
+		"css_newWin": ".sb-actions a.button-alt.sm",
 		"css_remove": "#global-scoreboard, div.container, #global-nav",
 		"css_free": [
 			{
@@ -63,7 +64,9 @@ var SiteDB = [
 					"padding-top": "50px"
 				}
 			}
-		]
+		],
+		"isRepeat": true,
+		"repeatInterval": 3000
 	},
 	{
 		"name": "Facebook",
