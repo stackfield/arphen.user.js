@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
-// @namespace     https://github.com/arphen/arphen.user.js/blob/master/page_cleaner.user.js
-// @version       2.0.20160213
+// @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
+// @version       2.1.20160221
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
