@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       2.9.20160229
+// @version       3.0.20160301
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
-// @require       https://cdn.rawgit.com/arphen/arphen.user.js/master/libs/utility.js
-// @require       https://cdn.rawgit.com/arphen/arphen.user.js/master/libs/video.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js
 // @grant         none
 // ==/UserScript==
 
