@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       3.0.20160301
+// @version       3.1.20160301
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -18,13 +18,14 @@ function log(text){
 	myLog.log(text);
 }
 
+/*
 function addScript(url) {
 	var scriptElement = document.createElement( "script" );
 	scriptElement.type = "text/javascript";
 	scriptElement.src = url;
 	document.body.appendChild( scriptElement );
 }
-
+*/
 
 function goto(page){
 	$('a.pagegbk').each(function(){
