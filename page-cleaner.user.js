@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.1.20160221
+// @version       2.2.20160303
 // @description   get a clean page
 // @include       http*://*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
-// @require       http://arphen.github.io/user_script_libs/utility.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
 // @grant         none
 // ==/UserScript==
 
@@ -48,6 +48,14 @@ var SiteDB = [
 		"url": "www.artfido.com/blog/",
 		"url_regx": "",
 		"css_remove": "#header, .top-ad-holder, #sidebar, .post-pagination ~ *, iframe, .addthis_toolbox, img[alt~=ArtFido]",
+		"isRepeat": true,
+		"repeatInterval": 3000
+	},
+	{
+		"name": "CHT Email",
+		"url": "email.cht.com.tw",
+		"url_regx": "",
+		"css_remove": "div.dlgMask",
 		"isRepeat": true,
 		"repeatInterval": 3000
 	},
