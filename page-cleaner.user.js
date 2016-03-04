@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.2.20160303
+// @version       2.3.20160304
 // @description   get a clean page
 // @include       http*://*
+// @exclude      *docs.google.com*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
