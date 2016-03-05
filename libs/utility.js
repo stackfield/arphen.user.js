@@ -5,7 +5,7 @@
  * String extension
  *******************************************************************/
 // format string:
-// (Ex) 'Hello {0}!'.format('World');  --> return 'Hello World!'
+// (Ex) 'Hello {0}, {1}!'.format('World', 'arphen');  --> return 'Hello World, arphen!'
 String.prototype.apl_format = function(){
 	var msg = this;
 	var i, rx;
