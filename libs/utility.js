@@ -19,10 +19,10 @@ String.prototype.apl_format = function(){
 /*******************************************************************
  * Utility
  *******************************************************************/
-var UTIL = {};
+var APLTOOL = {};
 
 // return a hash string
-UTIL.hash = function(len) {
+APLTOOL.hash = function(len) {
 	if(len===undefined){ len=20; }
 	return Math.random().toString().substr(2, len);
 };
@@ -55,7 +55,7 @@ var myLog = {
  * Usage:
  *  addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');
  */
-function addScript(url) {
+APLTOOL.addScript = function(url) {
 	try{
 		var scriptElement = document.createElement( "script" );
 		scriptElement.type = "text/javascript";
@@ -64,7 +64,7 @@ function addScript(url) {
 	}catch(err){ // unable to catch exception if blocked by CSP, but can see error in console
 		alert('addScript failed: '+url + '\n' + err.message);
 	}
-}
+};
 
 /* Usage:
  *　if you have a function aFunction(a, b){ return true; }
@@ -75,7 +75,7 @@ function addScript(url) {
  *  you can also add a function variable
  *    addScriptCode(aFunction);
  */
-function addScriptCode(code) {
+APLTOOL.addScriptCode = function(code) {
 	// inject my code in page
 	var str = '';
 	if(typeof code != 'string'){
@@ -87,13 +87,13 @@ function addScriptCode(code) {
 	var script = document.createElement('script');
 	script.appendChild(document.createTextNode(str));
 	(document.body || document.head || document.documentElement).appendChild(script);
-}
+};
 
 
 /* Usage:
  *  var v = getUrlParam('p1'); // (Ex) http://foo.bar/somepage?p1=abc&p2=def..., the value of v will be "abc"
  */
-function getUrlParam(param) {
+APLTOOL.getUrlParam = function(param) {
 	var result = "",
 		tmp = [];
 	var items = location.search.substr(1).split("&");
@@ -102,4 +102,4 @@ function getUrlParam(param) {
 		if (tmp[0] === param) result = decodeURIComponent(tmp[1]);
 	}
 	return result;
-}
+};
