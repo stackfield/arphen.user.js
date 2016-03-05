@@ -31,26 +31,6 @@ APLTOOL.hash = function(len) {
 // What is the most efficent way to clone a JavaScript object? - Stack Overflow
 // http://stackoverflow.com/questions/122102/what-is-the-most-efficent-way-to-clone-a-javascript-object
 
-
-/* Usage:
- *  myLog.init('TW116'); // before you use myLog, set the title of your script.
- *  myLog.log('hello world!'); // print any message you want, then it will display in chrome console.
- */
-var myLog = {
-	title: 'YOUR_SCRIPT',
-	init: function(title) {
-		myLog.title = title;
-	},
-	log: function(text) {
-		try {
-			var d = new Date();
-			var n = d.toLocaleString();
-			console.log(n + ' [' + myLog.title + '] ' + text);
-		} catch (err) {}
-	}
-};
-
-
 /* Note: 必須原始網站沒有限制CSP(Content Security Policy)才能允許引用其它domain之js
  * Usage:
  *  addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');
@@ -102,4 +82,22 @@ APLTOOL.getUrlParam = function(param) {
 		if (tmp[0] === param) result = decodeURIComponent(tmp[1]);
 	}
 	return result;
+};
+
+/* Usage:
+ *  myLog.init('TW116'); // before you use myLog, set the title of your script.
+ *  myLog.log('hello world!'); // print any message you want, then it will display in chrome console.
+ */
+var myLog = {
+	title: 'YOUR_SCRIPT',
+	init: function(title) {
+		myLog.title = title;
+	},
+	log: function(text) {
+		try {
+			var d = new Date();
+			var n = d.toLocaleString();
+			console.log(n + ' [' + myLog.title + '] ' + text);
+		} catch (err) {}
+	}
 };
