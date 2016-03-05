@@ -18,15 +18,6 @@ function log(text){
 	myLog.log(text);
 }
 
-/*
-function addScript(url) {
-	var scriptElement = document.createElement( "script" );
-	scriptElement.type = "text/javascript";
-	scriptElement.src = url;
-	document.body.appendChild( scriptElement );
-}
-*/
-
 function goto(page){
 	$('a.pagegbk').each(function(){
 		var s = $(this).text();
