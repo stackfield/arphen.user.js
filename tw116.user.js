@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       3.2.20160305
+// @version       3.3.20160305
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
