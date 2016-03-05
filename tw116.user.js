@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       3.1.20160301
+// @version       3.2.20160305
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
-// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js?aaa=bbb
 // @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js
 // @grant         none
 // ==/UserScript==
@@ -142,23 +142,7 @@ function inpage_openBaiduPan(){
 	}, 2000);
 }
 
-
-function main(){
-	// use myLog
-	myLog.init('TW116');
-
-	// inject jquery in page
-	addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');  // 允許插入和原page不同domain的js => 因為tw116網站沒有設限CSP (Content Security Policy)
-
-	// inject my code in page
-	addScriptCode('var win; ' + inpage_openBaiduPan);
-
-	// hilite
-	hilite();
-
-	// process baidu pan
-	baiduLink();
-
+function keydownObserver(){
 	// add short-key
 	$('body').keydown(function(e){
 		log('keydown = ' + e.which);
@@ -172,6 +156,26 @@ function main(){
 				break;
 		}
 	});
+}
+
+
+function main(){
+	// use myLog
+	myLog.init('TW116');
+
+	// inject jquery in page
+	APLTOOL.addScript('http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js');  // 允許插入和原page不同domain的js => 因為tw116網站沒有設限CSP (Content Security Policy)
+
+	// inject my code in page
+	APLTOOL.addScriptCode('var win; ' + inpage_openBaiduPan);
+
+	// hilite
+	hilite();
+
+	// process baidu pan
+	baiduLink();
+
+	keydownObserver();
 }
 
 main();
