@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.3.20160304
+// @version       2.4.20160306
 // @description   get a clean page
 // @include       http*://*
-// @exclude      *docs.google.com*
+// @exclude       *docs.google.com*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
@@ -76,6 +76,12 @@ var SiteDB = [
 		],
 		"isRepeat": true,
 		"repeatInterval": 3000
+	},
+	{
+		"name": "Eyny",
+		"url": "eyny.com",
+		"url_regx": "",
+		"css_remove": 'div#hd + table[width], td.forumlist, div#pt, div#ft, div#pgt, div.hdc, div#f_pst, div.bm.bml.pbn, ul#thread_types, h2 a img, iframe, div.sitemajiad, table[height="240"], table.t_p_top'
 	},
 	{
 		"name": "Facebook",
