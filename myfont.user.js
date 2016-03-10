@@ -1,24 +1,25 @@
 // ==UserScript==
 // @name         MyFont
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      2.2.20160309
+// @version      2.3.20160310
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
 // @match        http*://*/*
-// @exclude      *netflix.com*
-// @exclude      *github.com*
-// @exclude      *openuserjs.org*
-// @exclude      *taobao.com*
-// @exclude      *naxosmusiclibrary.com*
-// @exclude      *hackpad.com*
-// @exclude      *jotform.com*
-// @exclude      *taiwanmooc.org*
+// @exclude      *211.20.181.194*
 // @exclude      *coursera.*
 // @exclude      *edx.org*
-// @exclude      *openedu.*
+// @exclude      *github.com*
+// @exclude      *hackpad.com*
+// @exclude      *jotform.com*
 // @exclude      *jsfiddle.*
-// @exclude      *211.20.181.194*
+// @exclude      *naxosmusiclibrary.com*
+// @exclude      *netflix.com*
+// @exclude      *openedu.*
+// @exclude      *openuserjs.org*
+// @exclude      *taiwanmooc.org*
+// @exclude      *taobao.com*
+// @exclude      *trello.com*
 // @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
 // @grant        GM_addStyle
 // ==/UserScript==
