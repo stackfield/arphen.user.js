@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.4.20160306
+// @version       2.5.20160311
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -62,15 +62,21 @@ var SiteDB = [
 	},
 	{
 		"name": "ESPN",
-		"url": "espn.go.com/nba/scoreboard",
+		"url": "espn.go.com/nba/",
 		"url_regx": "",
 		"css_newWin": ".sb-actions a.button-alt.sm",
-		"css_remove": "#global-scoreboard, div.container, #global-nav",
+		"css_remove": "#global-scoreboard, div.container, #global-nav, #global-header, #pane-main:before, header.game-strip div.competitors",
 		"css_free": [
 			{
 				"selector": "#pane-main",
 				"css": {
-					"padding-top": "50px"
+					"padding-top": "0px"
+				}
+			},
+			{
+				"selector": "header.automated-header",
+				"css": {
+					"padding": "0px"
 				}
 			}
 		],
