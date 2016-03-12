@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Baidu Pan
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/baidu-pan.user.js
-// @version       1.1.20160217
+// @version       1.2.20160311
 // @description   As I wish
 // @include       http://pan.baidu.com/s*
 // @copyright     2015+, Arphen Lin
@@ -70,9 +70,20 @@ function getMessage(event){
 	}
 }
 
+function enterDir(){
+	// check if dir exists
+	var dirs = $('div[node-type="item"][data-extname="dir"]');
+	//debugger;
+	log('dirs.length = ' + dirs.length);
+	if(dirs.length === 1){
+		$('span[node-type="name-text"]', dirs[0])[0].click(); // 自動點擊進入目錄
+	}
+}
+
 function main(){
 	window.addEventListener('message', getMessage);
+	setInterval(enterDir, 1000);
 }
 
 main();
-//setInterval(main, 2000);
+
