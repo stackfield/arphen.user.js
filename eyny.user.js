@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/eyny.user.js
-// @version       1.3.20160306
+// @version       1.4.20160313
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
@@ -19,20 +19,12 @@ function log(text){
 	myLog.log(text);
 }
 
-
-function hide(){
-	$('div#hd + table[width], td.forumlist').remove();
-	$('div#pt, div#ft, div#pgt, div.hdc, div#f_pst, div.bm.bml.pbn, ul#thread_types').remove();
-	$('h2 a img, iframe, div.sitemajiad').remove();
-	$('table[height="240"], table.t_p_top').remove();
-}
-
 function hilite(){
 	//log("hilite");
 	$('h3.ptn a').each(function(){
 		var s = $(this).text();
 		var o;
-		if(s.search(/(SIRO|CHN|新人|debut|引退|大橋未久|波多野|羽田愛|羽田あい|一ノ瀬アメリ|百合川|前田|美雪|希志|julia|涼川|佐々木愛美|遠山雪菜|岡田優子|有賀|三上)/i)>=0){
+		if(s.search(/(SIRO|CHN|新人|debut|引退|大橋未久|波多野|羽田愛|羽田あい|一ノ瀬アメリ|百合川|前田|美雪|希志|julia|涼川|佐々木愛美|遠山雪菜|岡田優子|有賀|三上|鈴村あいり|鈴村愛里)/i)>=0){
 			//alert(s);
 			if(s.search(/(新人)/)>=0 && s.search(/(人妻)/)>=0){
 				// pass 最新人妻
