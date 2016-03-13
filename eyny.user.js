@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/eyny.user.js
-// @version       1.4.20160313
+// @version       2.0.20160313
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
@@ -13,7 +13,7 @@
 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
-//var url = window.location.href;
+var url = window.location.href.toLowerCase();
 
 function log(text){
 	myLog.log(text);
@@ -47,11 +47,47 @@ function hilite(){
 	setTimeout(hilite, 5000);
 }
 
+function createContainer(){
+	$('body').append('<div id="torrent"></div>');
+	$('#torrent').css({
+		position: "fixed", top: "50px", right: "0px",
+		backgroundColor: "yellow",
+		border: "2px solid red",
+		"padding-left": "15px", "padding-right": "15px",
+		fontSize: "20px"});
+}
+
+function moveTop(ele){
+	if($('#torrent').length<=0){
+		createContainer();
+	}
+	$('#torrent').append(ele);
+	$('#torrent').append('<br>');
+}
+
+function torrent(){
+	if(url.indexOf('eyny.com/forum.php') >= 0 || url.indexOf('eyny.com/thread-') >= 0){
+		$('a[href*="attachment"]').each(function(){
+			var s = $(this).text();
+			if(s.search(/torrent/)>=0){
+				//alert(s);
+				moveTop(this);
+				$(this).click(function(){
+					//if (confirm("Close Window?")) { close(); }
+					close();
+				});
+			}
+		});
+	}
+}
+
 function main(){
 	myLog.init('Eyny');
 
 	//hide();
 	hilite();
+	
+	torrent();
 }
 
 main();
