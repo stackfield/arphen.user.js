@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.6.20160313
+// @version       2.7.20160313
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -180,7 +180,9 @@ var SiteDB = [
 		"name": "卡提諾論壇",
 		"url": "ck101.com",
 		"url_regx": "",
-		"css_remove": '#header, .footer, .side, .flt_r_i, .sideToolBar, .tagBox, .tagBox ~ *, div[id^="post_"] ~ *'
+		"css_remove": '#header, .footer, .side, .flt_r_i, .sideToolBar, .tagBox, .tagBox ~ *, div[id^="post_"] ~ *, div.gamePopWp, div.gamePopBg, div.a_t',
+		"isRepeat": true,
+		"repeatInterval": 3000
 	}
 ];
 
