@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          GMail This
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/gmailthis.user.js
-// @version       1.0.20160218
+// @version       1.1.20160318
 // @description   As I wish
 // @include       https://mail.google.com/mail/u/*
 // @copyright     2016+, Arphen Lin
@@ -12,6 +12,8 @@
 // ==/UserScript==
 
 this.$ = this.jQuery = jQuery.noConflict(true);
+
+var url = window.location.href.toLowerCase();
 
 function insertMyEmail(){
 	myLog.log('insertMyEmail');
@@ -30,6 +32,10 @@ function sendMail(){
 }
 
 function main(){
+	if(url.indexOf('compose=') > 0 || url.indexOf('bypass_user_script') > 0){
+		return;
+	}
+
 	// use myLog
 	myLog.init('GMail This');
 
