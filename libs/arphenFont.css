@@ -1,35 +1,38 @@
 /* no unicode-range; default to all characters */
 @font-face {
-font-family: ArphenFont;
-src: local("Helvetica"), local("tahoma"), local("arial");
+  font-family: ArphenFont;
+  src: local("Helvetica"), local("tahoma"), local("arial");
 }
 
 /* CJK專用 */
 @font-face {
-font-family: ArphenFont;
-unicode-range: U+4E00-9FFF; /* CJK */
-src: "Noto Sans TC", local("microsoft jhenghei");
+  font-family: ArphenFont;
+  unicode-range: U+4E00-9FFF; /* CJK */
+  src: "Noto Sans TC", local("microsoft jhenghei");
 }
 
 /* Latin characters 專用 */
 @font-face {
-font-family: ArphenFont; /* 同樣的 font-family */
-unicode-range: U+00-024F; /* Latin, Latin1 Sup., Ext-A, Ext-B */
-src: local("Segoe UI");
+  font-family: ArphenFont; /* 同樣的 font-family */
+  unicode-range: U+00-024F; /* Latin, Latin1 Sup., Ext-A, Ext-B */
+  src: local("Segoe UI");
 }
 
 /* 注音符號專用 */
 @font-face {
-font-family: ArphenFont; /* 同樣的 font-family */
-unicode-range: U+3100-312F; /* Bopomofo */
-src: "Noto Sans TC", local("microsoft jhenghei");
+  font-family: ArphenFont; /* 同樣的 font-family */
+  unicode-range: U+3100-312F; /* Bopomofo */
+  src: "Noto Sans TC", local("microsoft jhenghei");
 }
 
 /* 日文假名專用 */
 @font-face {
-font-family: ArphenFont; /* 同樣的 font-family */
-unicode-range: U+3040-30FF; /* Hiragana, Katakana */
-src: local(Meiryo); /* Windows Vista+ */
+  font-family: ArphenFont; /* 同樣的 font-family */
+  unicode-range: U+3040-30FF; /* Hiragana, Katakana */
+  src: local(Meiryo); /* Windows Vista+ */
 }
 
-* { font-family: ArphenFont, Helvetica, tahoma, arial, "segoe ui", "Noto Sans TC", "microsoft jhenghei" !important; }  pre, pre > * {font-family: consolas !important; }
+/* 只針對沒設class的進行調整 */
+*:not([class]) {
+  font-family: ArphenFont, Helvetica, tahoma, arial, "segoe ui", "Noto Sans TC", "microsoft jhenghei" !important; }
+pre:not([class]), pre > *:not([class]) {font-family: consolas !important; }
