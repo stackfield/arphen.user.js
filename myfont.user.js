@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyFont
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      2.4.20160314
+// @version      2.5.20160319
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
@@ -21,9 +21,10 @@
 // @exclude      *taiwanmooc.org*
 // @exclude      *taobao.com*
 // @exclude      *trello.com*
-// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
+// @require      https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
 // @grant        GM_addStyle
 // ==/UserScript==
+
 
 (function() {
 	'use strict';
@@ -33,8 +34,11 @@
 
 	// Google Fonts 推出「思源黑體」中文網頁字型，改善網頁文字顯示效果 - https://goo.gl/yuGglm
 	APLTOOL.loadFile('http://fonts.googleapis.com/earlyaccess/notosanstc.css', 'css');
-	var css = '* { font-family:  Helvetica, tahoma, arial, "segoe ui", "Noto Sans TC", "microsoft jhenghei" !important; }  pre, pre > * {font-family: consolas !important; } ';
 	//var css = '* { font-family:  "Noto Sans TC" !important; }  pre, pre > * {font-family: consolas !important; } ';
+	//var css = '* { font-family:  Helvetica, tahoma, arial, "segoe ui", "Noto Sans TC", "microsoft jhenghei" !important; }  pre, pre > * {font-family: consolas !important; } ';
+
+	// CSS原始碼: https://github.com/arphen/arphen.user.js/blob/master/libs/arphenFont.css
+	var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}*{font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre,pre>*{font-family:consolas!important}';
 
 	GM_addStyle(css);
 })();
