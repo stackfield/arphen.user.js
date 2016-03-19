@@ -19,7 +19,7 @@
 // @exclude      *openuserjs.org*
 // @exclude      *slideshare.net*
 // @exclude      *taiwanmooc.org*
-// @exclude      *taobao.com*
+// @exclude      *_taobao.com*
 // @exclude      *trello.com*
 // @require      https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
 // @grant        GM_addStyle
@@ -37,8 +37,9 @@
 	//var css = '* { font-family:  Helvetica, tahoma, arial, "segoe ui", "Noto Sans TC", "microsoft jhenghei" !important; }  pre, pre > * {font-family: consolas !important; } ';
 
 	// CSS原始碼 - https://github.com/arphen/arphen.user.js/blob/master/libs/arphenFont.css
-	APLTOOL.loadFile('https://rawgit.com/arphen/arphen.user.js/master/libs/arphenFont.css', 'css');
+	//APLTOOL.loadFile('https://rawgit.com/arphen/arphen.user.js/master/libs/arphenFont.css', 'css');
 	//var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}*{font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre,pre>*{font-family:consolas!important}';
+	var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}:not([class]){font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre:not([class]),pre>:not([class]){font-family:consolas!important}';
 
-	//GM_addStyle(css);
+	GM_addStyle(css);
 })();
