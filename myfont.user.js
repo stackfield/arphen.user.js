@@ -1,24 +1,24 @@
 // ==UserScript==
 // @name         MyFont
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      2.7.20160319
+// @version      2.8.20160320
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
 // @match        http*://*/*
 // @exclude      *211.20.181.194*
-// @exclude      *coursera.*
-// @exclude      *edx.org*
+// @exclude      *_coursera.*
+// @exclude      *_edx.org*
 // @exclude      *github.com*
-// @exclude      *hackpad.com*
-// @exclude      *jotform.com*
-// @exclude      *jsfiddle.*
-// @exclude      *naxosmusiclibrary.com*
+// @exclude      *_hackpad.com*
+// @exclude      *_jotform.com*
+// @exclude      *_jsfiddle.*
+// @exclude      *_naxosmusiclibrary.com*
 // @exclude      *netflix.com*
-// @exclude      *openedu.*
-// @exclude      *openuserjs.org*
-// @exclude      *slideshare.net*
-// @exclude      *taiwanmooc.org*
+// @exclude      *_openedu.*
+// @exclude      *_openuserjs.org*
+// @exclude      *_slideshare.net*
+// @exclude      *_taiwanmooc.org*
 // @exclude      *_taobao.com*
 // @exclude      *trello.com*
 // @require      https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
@@ -38,8 +38,8 @@
 
 	// CSS原始碼 - https://github.com/arphen/arphen.user.js/blob/master/libs/arphenFont.css
 	//APLTOOL.loadFile('https://rawgit.com/arphen/arphen.user.js/master/libs/arphenFont.css', 'css');
-	//var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}*{font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre,pre>*{font-family:consolas!important}';
-	var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}:not([class]){font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre:not([class]),pre>:not([class]){font-family:consolas!important}';
+	var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}*{font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre,pre>*{font-family:consolas!important}';
+	//var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}:not([class]){font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre:not([class]),pre>:not([class]){font-family:consolas!important}';
 
 	GM_addStyle(css);
 })();
