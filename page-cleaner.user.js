@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.7.20160313
+// @version       2.8.20160327
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -59,6 +59,12 @@ var SiteDB = [
 		"css_remove": "div.dlgMask",
 		"isRepeat": true,
 		"repeatInterval": 3000
+	},
+	{
+		"name": "Digitimes",
+		"url": "digitimes.com.tw",
+		"url_regx": "",
+		"css_remove": '#sitemaptable, div.art_tabbed_nav, #ToolsBoxHorizontal, table[width="990"], table[width="987"], table[width="986"], #pagefloat_r, #relate_table, #footer'
 	},
 	{
 		"name": "ESPN",
