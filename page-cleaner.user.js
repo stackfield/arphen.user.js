@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       2.8.20160327
+// @version       2.9.20160405
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -58,7 +58,15 @@ var SiteDB = [
 		"url_regx": "",
 		"css_remove": "div.dlgMask",
 		"isRepeat": true,
-		"repeatInterval": 3000
+		"repeatInterval": 3000,
+		"css_free": [
+			{
+				"selector": "#divConvTopic",
+				"css": {
+					"font-weight": "bold"
+				}
+			}
+		]
 	},
 	{
 		"name": "Digitimes",
