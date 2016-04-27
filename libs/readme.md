@@ -1,7 +1,7 @@
 以video.js為例:
 
 1. 複製video.js的URL: https://github.com/arphen/arphen.user.js/blob/master/libs/video.js
-2. 打開 http://rawgit.com/，貼上上述URL，會顯示二個URL:
+2. 打開 http://rawgit.com/ ，貼上上述URL，會顯示二個URL:
    * Use this URL for dev/testing: https://rawgit.com/arphen/arphen.user.js/master/libs/video.js
    * Use this URL in production: https://cdn.rawgit.com/arphen/arphen.user.js/master/libs/video.js
 3. 引用差別：
