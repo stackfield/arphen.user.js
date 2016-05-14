@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Eyny
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/eyny.user.js
-// @version       2.0.20160313
+// @version       2.1.20160514
 // @description   Hiding and hilighting some html elements
 // @include       http://*.eyny.com/*
 // @copyright     2015+, Arphen Lin
@@ -81,13 +81,26 @@ function torrent(){
 	}
 }
 
+function loadImage(){
+	if(url.indexOf('eyny.com/forum.php') >= 0 || url.indexOf('eyny.com/thread-') >= 0){
+		$('a[href$=".jpg"]').each(function(){
+			var s = $(this).text();
+			//myLog.log(s);
+			$(this).append('<img src="'+s+'">');
+		});
+	}
+}
+
+
 function main(){
 	myLog.init('Eyny');
 
 	//hide();
 	hilite();
-	
+
 	torrent();
+
+	loadImage();
 }
 
 main();
