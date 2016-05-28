@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyFont
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      3.1.20160504
+// @version      3.2.20160528
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
@@ -9,6 +9,7 @@
 // @exclude      *211.20.181.194*
 // @exclude      *_coursera.*
 // @exclude      *_edx.org*
+// @exclude      *docs.google*
 // @exclude      *github.com*
 // @exclude      *hackpad.com*
 // @exclude      *_jotform.com*
@@ -22,7 +23,7 @@
 // @exclude      *_slideshare.net*
 // @exclude      *_taiwanmooc.org*
 // @exclude      *_taobao.com*
-// @exclude      *trello.com*
+// @exclude      *_trello.com*
 // @require      https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
 // @grant        GM_addStyle
 // ==/UserScript==
