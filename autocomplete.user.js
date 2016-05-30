@@ -1,9 +1,10 @@
 // ==UserScript==
 // @name          Autocomplete
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/autocomplete.user.js
-// @version       1.0.20160529
+// @version       1.1.20160530
 // @description   As I wish
 // @include       http*://*
+// @exclude       *ebank.bot.com.tw*
 // @exclude       -http://efms.hinet.net/FMS/
 // @exclude       -http://efms.hinet.net/FMS/subsystem/Map/*
 // @copyright     2016+, Arphen Lin
