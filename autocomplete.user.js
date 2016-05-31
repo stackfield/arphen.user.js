@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Autocomplete
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/autocomplete.user.js
-// @version       1.3.20160531
+// @version       1.4.20160531
 // @description   As I wish
 // @include       http*://*
 // @exclude       *ebank.bot.com.tw*
@@ -18,6 +18,7 @@
 // ==/UserScript==
 
 /* REF:
+ * selectToAutocomplete - https://goo.gl/x2TLB
  * Autocomplete | jQuery UI - http://goo.gl/Jbl8Z
  */
  
