@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Autocomplete
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/autocomplete.user.js
-// @version       1.2.20160530
+// @version       1.3.20160531
 // @description   As I wish
 // @include       http*://*
 // @exclude       *ebank.bot.com.tw*
@@ -16,6 +16,11 @@
 // @require       https://rawgit.com/arphen/arphen.user.js/master/libs/waitForKeyElements.js
 // @grant         GM_addStyle
 // ==/UserScript==
+
+/* REF:
+ * Autocomplete | jQuery UI - http://goo.gl/Jbl8Z
+ */
+ 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 var url = window.location.href.toLowerCase();
