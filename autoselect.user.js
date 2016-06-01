@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          AutoSelect
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/autoselect.user.js
-// @version       1.0.20160601
+// @version       1.1.20160601
 // @description   將 <select> 自動轉為 autocomplete box
 // @include       http*://*
 // @exclude       *ebank.bot.com.tw*
@@ -21,7 +21,7 @@
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 function main() {
-    myLog.init('Autocomplete');
+    myLog.init('AutoSelect');
 
     // add css
     GM_addStyle('.ui-helper-reset,.ui-menu{list-style:none;padding:0;outline:0}.ui-helper-hidden{display:none}.ui-helper-hidden-accessible{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.ui-helper-zfix,.ui-widget-overlay{width:100%;height:100%;left:0;top:0}.ui-helper-reset{margin:0;border:0;line-height:1.3;text-decoration:none;font-size:100%}.ui-helper-clearfix:after,.ui-helper-clearfix:before{content:"";display:table;border-collapse:collapse}.ui-helper-clearfix:after{clear:both}.ui-helper-clearfix{min-height:0}.ui-helper-zfix{position:absolute;opacity:0;filter:Alpha(Opacity=0)}.ui-front{z-index:100}.ui-state-disabled{cursor:default!important}.ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat}.ui-widget-overlay{position:fixed}.ui-autocomplete,.ui-menu .ui-menu{position:absolute}.ui-autocomplete{top:0;left:0;cursor:default}.ui-menu{margin:0;display:block}.ui-menu .ui-menu-item{position:relative;margin:0;padding:3px 1em 3px .4em;cursor:pointer;min-height:0;list-style-image:url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7)}.ui-menu .ui-menu-divider{margin:5px 0;height:0;font-size:0;line-height:0;border-width:1px 0 0}.ui-menu-icons{position:relative}.ui-menu-icons .ui-menu-item{padding-left:2em}.ui-menu .ui-icon{position:absolute;top:0;bottom:0;left:.2em;margin:auto 0}.ui-menu .ui-menu-icon{left:auto;right:0}');
