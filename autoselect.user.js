@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name          Autocomplete
-// @namespace     https://github.com/arphen/arphen.user.js/blob/master/autocomplete.user.js
-// @version       1.5.20160531
-// @description   convert <select> to autocomplete box
+// @name          AutoSelect
+// @namespace     https://github.com/arphen/arphen.user.js/blob/master/autoselect.user.js
+// @version       1.0.20160601
+// @description   將 <select> 自動轉為 autocomplete box
 // @include       http*://*
 // @exclude       *ebank.bot.com.tw*
 // @copyright     2016+, Arphen Lin
@@ -14,7 +14,7 @@
 // @require       https://rawgit.com/arphen/arphen.user.js/master/libs/waitForKeyElements.js
 // @grant         GM_addStyle
 // ==/UserScript==
-/* REF:
+/* Refs:
  * selectToAutocomplete - https://goo.gl/x2TLB
  * Autocomplete | jQuery UI - http://goo.gl/Jbl8Z
  */
