@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       1.1.20160604
+// @version       1.2.20160604
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -24,7 +24,7 @@ function main(){
 	// use myLog
 	myLog.init('Hami Cloudbox');
 
-	setInterval(selectDeleted, 5000);
+	setInterval(selectDeleted, 3000);
 }
 
 main();
