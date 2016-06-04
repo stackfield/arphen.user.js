@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       3.1.20160514
+// @version       3.2.20160604
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -115,7 +115,7 @@ var SiteDB = [
 		"name": "HamiCloud",
 		"url": "hamicloud.net",
 		"url_regx": "",
-		"css_remove": "div.blockOverlay, #show-upload-fun, #show-upload-list",
+		"css_remove": "div.blockOverlay, #show-upload-fun, #show-upload-list, #footer",
 		"isRepeat": true,
 		"repeatInterval": 1000
 	},
