@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       3.0.20160605
+// @version       3.1.20160605
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -15,6 +15,22 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 
 var gTotalRows = 0;
 var gDirTree = {};
+var gWaitingTime = 0; // sec
+
+function untilfullDeleteDone(){
+	if($('div.blockUI.blockMsg.blockPage').is(':visible')){
+		if(gWaitingTime >= 60){
+			// 等太久了, 自動reload
+			window.location.reload();
+		}else{
+			gWaitingTime += 5; // sec
+			setTimeout(untilfullDeleteDone, 5000);
+		}
+	}else{
+		gWaitingTime = 0;
+		scanAll();
+	}
+}
 
 function fullyDelete() {
     // 自動勾選已刪除檔案
@@ -27,6 +43,8 @@ function fullyDelete() {
             myLog.log('徹底刪除{0}個檔案'.apl_format(dels.length));
             $('li#list-func-batch-delete-fully a')[0].click(); // 加上[0]是關鍵!
             // 因出現alert會中斷程式, 必須再按一次目錄才會繼續
+			gWaitingTime = 0;
+			untilfullDeleteDone();
         }
     }
 }
