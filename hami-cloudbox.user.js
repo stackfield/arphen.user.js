@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       2.0.20160605
+// @version       2.1.20160605
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -64,10 +64,10 @@ function scanAll() {
     myLog.log('此目錄已無待刪檔案');
 
     // step 3. 目前位置已無待刪檔案, 進入子目錄
+    var dir = $('p#back-current-dir').text();
     trs = $('tr.back-row-dir');
     if (trs.length > 0) {
         // 進入還沒掃過的子目錄
-        var dir = $('p#back-current-dir').text();
         //debugger;
         for (var i = 0; i < trs.length; i++) {
             var path = '{0} / {1}'.apl_format(dir, $(trs[i]).find('td.back-row-name a').text());
@@ -80,18 +80,22 @@ function scanAll() {
             }
         }
 		myLog.log('此目錄已掃完');
-        // 標記為1
-        markDirDone();
-        // 回上一層目錄
-        backToParent();
     } else {
         myLog.log('已無子目錄');
-        // 標記為1
-        markDirDone();
-        // 回上一層目錄
-        backToParent();
     }
 
+	// 標記為1
+	markDirDone();
+
+	// 判斷是否結束
+	var root = GM_getValue('cloudboxRootDir', '');
+	if(dir === root){ // 已經掃完此目錄及所有子目錄
+		myLog.log('此目錄為本次掃瞄根目錄，已全部掃完。');
+		return;
+	}else{
+		// 回上一層目錄
+		backToParent();
+	}
 }
 
 function scanNewDir(dir) {
@@ -122,6 +126,7 @@ function main() {
     if (json === '{}') {
         r = confirm("是否由此目錄開始掃瞄?");
         if (r === true) {
+			GM_setValue('cloudboxRootDir', dir);
             scanNewDir(dir);
         }
     } else {
