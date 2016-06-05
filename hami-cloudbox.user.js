@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       2.1.20160605
+// @version       2.2.20160605
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -79,9 +79,9 @@ function scanAll() {
                 return;
             }
         }
-		myLog.log('此目錄已掃完');
+		myLog.log('子目錄已掃完');
     } else {
-        myLog.log('已無子目錄');
+        myLog.log('無子目錄');
     }
 
 	// 標記為1
@@ -90,7 +90,7 @@ function scanAll() {
 	// 判斷是否結束
 	var root = GM_getValue('cloudboxRootDir', '');
 	if(dir === root){ // 已經掃完此目錄及所有子目錄
-		myLog.log('此目錄為本次掃瞄根目錄，已全部掃完。');
+		alert('此目錄為本次掃瞄根目錄，已全部掃完。');
 		return;
 	}else{
 		// 回上一層目錄
