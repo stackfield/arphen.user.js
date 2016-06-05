@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       2.2.20160605
+// @version       2.5.20160605
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -79,23 +79,25 @@ function scanAll() {
                 return;
             }
         }
-		myLog.log('子目錄已掃完');
+        myLog.log('子目錄已掃完');
     } else {
         myLog.log('無子目錄');
     }
 
-	// 標記為1
-	markDirDone();
+    // 標記為1
+    markDirDone();
 
-	// 判斷是否結束
-	var root = GM_getValue('cloudboxRootDir', '');
-	if(dir === root){ // 已經掃完此目錄及所有子目錄
-		alert('此目錄為本次掃瞄根目錄，已全部掃完。');
-		return;
-	}else{
-		// 回上一層目錄
-		backToParent();
-	}
+    // 判斷是否結束
+    var root = GM_getValue('cloudboxRootDir', '');
+    if (dir === root) { // 已經掃完此目錄及所有子目錄
+        // reset all
+        resetGMVars();
+        alert('此目錄為本次掃瞄根目錄，已全部掃完。');
+        return;
+    } else {
+        // 回上一層目錄
+        backToParent();
+    }
 }
 
 function scanNewDir(dir) {
@@ -107,17 +109,22 @@ function scanNewDir(dir) {
     scanAll();
 }
 
+function resetGMVars() {
+    GM_setValue('cloudboxDirTree', '{}');
+    GM_setValue('cloudboxRootDir', '');
+}
+
 function main() {
     // use myLog
     myLog.init('Hami Cloudbox');
 
     var dir = $('p#back-current-dir').text();
     myLog.log(dir);
-	var r;
+    var r;
     if (dir === '我的雲櫃') {
         r = confirm("是否RESET所有掃瞄目錄?");
         if (r === true) {
-            GM_setValue('cloudboxDirTree', '{}');
+            resetGMVars();
         }
     }
     var json = GM_getValue('cloudboxDirTree', '{}');
@@ -126,7 +133,7 @@ function main() {
     if (json === '{}') {
         r = confirm("是否由此目錄開始掃瞄?");
         if (r === true) {
-			GM_setValue('cloudboxRootDir', dir);
+            GM_setValue('cloudboxRootDir', dir);
             scanNewDir(dir);
         }
     } else {
@@ -135,10 +142,17 @@ function main() {
             scanNewDir(dir);
         } else {
             //debugger;
-            if (v === 0) {
-                scanAll();
-            } else {
-                myLog.log('此目錄已掃過了');
+            switch (v) {
+                case 0:
+                    scanAll();
+                    break;
+                case 1:
+                    myLog.log('此目錄已掃過了');
+                    backToParent(); // 回上一層目錄
+                    break;
+                default:
+                    myLog.log('無效的v值');
+                    break;
             }
         }
     }
