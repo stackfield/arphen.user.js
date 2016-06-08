@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name          AutoSelect
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/autoselect.user.js
-// @version       1.1.20160601
+// @version       1.2.20160608
 // @description   將 <select> 自動轉為 autocomplete box
 // @include       http*://*
 // @exclude       *ebank.bot.com.tw*
+// @exclude       *blog.moneydj.com*
 // @copyright     2016+, Arphen Lin
 // @author        Arphen Lin
 // @require       https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js
