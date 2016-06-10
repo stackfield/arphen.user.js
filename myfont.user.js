@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyFont
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      3.3.20160609
+// @version      3.4.20160610
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
@@ -11,6 +11,7 @@
 // @exclude      *_edx.org*
 // @exclude      *docs.google*
 // @exclude      *github.com*
+// @exclude      *gitbook.com*
 // @exclude      *hackpad.com*
 // @exclude      *_jotform.com*
 // @exclude      *jsfiddle.*
