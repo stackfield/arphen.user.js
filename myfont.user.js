@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         MyFont
 // @homepage     https://github.com/arphen/arphen.user.js/blob/master/myfont.user.js
-// @version      3.4.20160610
+// @version      3.5.20160611
 // @description  use my font
 // @copyright    2016+, Arphen Lin
 // @author       Arphen Lin
@@ -42,7 +42,7 @@
 
 	// CSS原始碼 - https://github.com/arphen/arphen.user.js/blob/master/libs/arphenFont.css
 	//APLTOOL.loadFile('https://rawgit.com/arphen/arphen.user.js/master/libs/arphenFont.css', 'css');
-	var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}*{font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre,pre>*{font-family:consolas!important}';
+	var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}*{font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre,pre *,pre>*,code,code *,code>*{font-family:consolas,"microsoft jhenghei"!important}';
 	//var css = '@font-face{font-family:ArphenFont;src:local("Helvetica"),local("tahoma"),local("arial")}@font-face{font-family:ArphenFont;unicode-range:U+4E00-9FFF;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+00-024F;src:local("Segoe UI")}@font-face{font-family:ArphenFont;unicode-range:U+3100-312F;src:"Noto Sans TC",local("microsoft jhenghei")}@font-face{font-family:ArphenFont;unicode-range:U+3040-30FF;src:local(Meiryo)}:not([class]){font-family:ArphenFont,Helvetica,tahoma,arial,"segoe ui","Noto Sans TC","microsoft jhenghei"!important}pre:not([class]),pre>:not([class]){font-family:consolas!important}';
 
 	GM_addStyle(css);
