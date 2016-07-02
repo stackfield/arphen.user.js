@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       3.1.20160605
+// @version       3.2.20160702
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -20,8 +20,8 @@ var gWaitingTime = 0; // sec
 function untilfullDeleteDone(){
 	if($('div.blockUI.blockMsg.blockPage').is(':visible')){
 		if(gWaitingTime >= 60){
-			// 等太久了, 自動reload
-			window.location.reload();
+			// 等太久了, 自動reload => todo: hicloud刪得比較慢, 重新reload可能會重複刪造成hicloud錯亂
+			//window.location.reload();
 		}else{
 			gWaitingTime += 5; // sec
 			setTimeout(untilfullDeleteDone, 5000);
@@ -43,6 +43,7 @@ function fullyDelete() {
             myLog.log('徹底刪除{0}個檔案'.apl_format(dels.length));
             $('li#list-func-batch-delete-fully a')[0].click(); // 加上[0]是關鍵!
             // 因出現alert會中斷程式, 必須再按一次目錄才會繼續
+			// todo: 詢問是否徹底刪除時, 按"取消"也不會停止
 			gWaitingTime = 0;
 			untilfullDeleteDone();
         }
