@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Hami Cloudbox
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/hami-cloudbox.user.js
-// @version       3.2.20160702
+// @version       3.3.20160702
 // @description   As I wish
 // @include       http://sync.hamicloud.net/*
 // @copyright     2015+, Arphen Lin
@@ -20,6 +20,7 @@ var gWaitingTime = 0; // sec
 function untilfullDeleteDone(){
 	if($('div.blockUI.blockMsg.blockPage').is(':visible')){
 		if(gWaitingTime >= 60){
+			myLog.log("徹底刪除已等太久了，可再手動按一次刪除。")
 			// 等太久了, 自動reload => todo: hicloud刪得比較慢, 重新reload可能會重複刪造成hicloud錯亂
 			//window.location.reload();
 		}else{
