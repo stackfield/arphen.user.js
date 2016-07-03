@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       3.5.20160703
+// @version       3.6.20160703
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -169,7 +169,7 @@ var SiteDB = [
 		"name": "UDN",
 		"url": "udn.com/",
 		"url_regx": "",
-		"css_remove": '#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *, #channel ~ *, #show_box, div[id^="ad_"], #channel, #scoreboard-container, #app',
+		"css_remove": '#header_head, #header_body_wrapper, #story_bar, #footer, #sidebar, #story ~ *, #story_foot ~ *, #story_body_content ~ *, #channel ~ *, #show_box, div[id^="ad_"], #channel, #scoreboard-container, #app, #wimbledonudn, #wimbledon-frame',
 		"css_free": [
 			{
 				"selector": "#header",
@@ -179,7 +179,7 @@ var SiteDB = [
 			}
 		],
 		"isRepeat": true,
-		"repeatInterval": 3000		
+		"repeatInterval": 3000
 	},
 	{
 		"name": "電腦王阿達",
