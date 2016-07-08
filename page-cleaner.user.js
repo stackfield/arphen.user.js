@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       3.6.20160703
+// @version       3.7.20160708
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -21,6 +21,18 @@ function log(text){
 }
 
 var SiteDB = [
+	{
+		"name": "123kubo-play",
+		"url": "www.123kubo.com/vod-play-",
+		"url_regx": "",
+		"css_remove": '.top, div:has(> ins), .playmar ~ *'
+	},
+	{
+		"name": "123kubo",
+		"url": "www.123kubo.com",
+		"url_regx": "",
+		"css_remove": ".likebox, #stad"
+	},
 	{
 		"name": "7-11",
 		"url": "eservice.7-11.com.tw/E-Tracking/search.aspx",
