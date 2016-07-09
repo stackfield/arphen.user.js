@@ -1,25 +1,21 @@
 // ==UserScript==
 // @name          123KUBO
-// @namespace     https://github.com/arphen/arphen.user.js
-// @version       0.2.20151221
+// @namespace     https://github.com/arphen/arphen.user.js/blob/master/123kubo.user.js
+// @version       1.0.20160709
 // @description   As I wish
 // @include       http://www.123kubo.com/*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
-// @require       http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
-// @require       http://arphen.github.io/user_script_libs/video.js
+// @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js
 // @grant         none
 // ==/UserScript==
-/* jshint -W097 */
-//'use strict';
 
 this.$ = this.jQuery = jQuery.noConflict(true);
 
 function log(text){
-    try{
-        console.log('[123KUBO] ' + text);
-    }catch(err){
-    }
+	myLog.log(text);
 }
 
 function goto(page){
@@ -50,25 +46,29 @@ function hilite(){
     });
 }
 
+function keydownObserver(){
+	// add short-key
+	$('body').keydown(function(e){
+		log('keydown = ' + e.which);
+		//return;
+		switch(e.which){
+			case 39: // right key -> next page
+				goto("下一頁");
+				break;
+			case 37: // left key -> prev page
+				goto("上一頁");
+				break;
+		}
+	});
+}
 
 function main(){
-    $('div.listforum, div.footer, div.datal.clear, ul.ad').remove();
+	// use myLog
+	myLog.init('123KUBO');
 
-    // hilite
     hilite();
 
-    $('body').keydown(function(e){
-        log('keydown = ' + e.which);
-        //return;
-        switch(e.which){
-            case 39: // right key -> next page
-                goto("下一頁");
-                break;
-            case 37: // left key -> prev page
-                goto("上一頁");
-                break;
-        }
-    });
+	keydownObserver();
 }
 
 main();
