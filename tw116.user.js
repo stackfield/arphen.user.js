@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       3.3.20160305
+// @version       3.3.20160709
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -17,6 +17,15 @@ this.$ = this.jQuery = jQuery.noConflict(true);
 function log(text){
 	myLog.log(text);
 }
+
+/*
+function addScript(url) {
+	var scriptElement = document.createElement( "script" );
+	scriptElement.type = "text/javascript";
+	scriptElement.src = url;
+	document.body.appendChild( scriptElement );
+}
+*/
 
 function goto(page){
 	$('a.pagegbk').each(function(){
@@ -41,6 +50,22 @@ function hilite(){
 		if(re.test(s)){
 			var o = $(this).parent().parent().parent();
 			$(o).css({backgroundColor: "#550055"}); // set back color
+		}
+	});
+}
+
+function actorLink(){
+	$('div.mlist dl dd').each(function(){
+		var s = $(this).text();
+		log(s);
+
+		if(s.indexOf("主演")>=0){
+			s = s.replace("主演：", "");
+			var arr = s.split(" ");
+			$(this).html("主演：");
+			for(var i=0; i<arr.length; i++){
+				$(this).append('<a href="http://www.123kubo.com/actor/'+arr[i]+'.html" target="_blank">'+arr[i]+'</a> ');
+			}
 		}
 	});
 }
@@ -163,10 +188,13 @@ function main(){
 	// hilite
 	hilite();
 
+	actorLink();
+
 	// process baidu pan
 	baiduLink();
 
 	keydownObserver();
+
 }
 
 main();
