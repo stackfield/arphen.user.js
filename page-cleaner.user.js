@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       3.7.20160708
+// @version       3.8.20160709
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -31,7 +31,7 @@ var SiteDB = [
 		"name": "123kubo",
 		"url": "www.123kubo.com",
 		"url_regx": "",
-		"css_remove": ".likebox, #stad"
+		"css_remove": ".likebox, #stad, div.datal.main"
 	},
 	{
 		"name": "7-11",
