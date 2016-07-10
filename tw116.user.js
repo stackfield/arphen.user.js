@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       3.3.20160709
+// @version       3.4.20160710
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
-// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js?aaa=bbb
-// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js?a=b
 // @grant         none
 // ==/UserScript==
 
@@ -39,17 +39,35 @@ function goto(page){
 }
 
 function hilite(){
+	//var re = new RegExp("(偵探小隊|黑傑克)");
+	var re = new RegExp(VideoList.join("|"));
+	var s = "", o;
 	$('div.mlist dl dt a').each(function(){
-		var s = $(this).text();
+		s = $(this).text();
 		//log(s);
-
-		//var re = new RegExp("(偵探小隊|黑傑克)");
-		var re = new RegExp(VideoList.join("|"));
 
 		//if(s.search(/(偵探小隊|黑傑克)/)>=0){
 		if(re.test(s)){
-			var o = $(this).parent().parent().parent();
+			o = $(this).parent().parent().parent();
 			$(o).css({backgroundColor: "#550055"}); // set back color
+		}
+	});
+
+	re = new RegExp(ActorList.join("|"));
+	$('div.mlist dl dd').each(function(){
+		s = $(this).text();
+		log(s);
+
+		if(s.indexOf("主演")>=0){
+			s = s.replace("主演：", "");
+			var arr = s.split(" ");
+			for(var i=0; i<arr.length; i++){
+				//$(this).append('<a href="http://www.123kubo.com/actor/'+arr[i]+'.html" target="_blank">'+arr[i]+'</a> ');
+				if(re.test(arr[i])){
+					o = $(this).parent().parent();
+					$(o).css({backgroundColor: "#550055"}); // set back color
+				}
+			}
 		}
 	});
 }
