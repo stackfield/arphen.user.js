@@ -43,3 +43,13 @@ var VideoList = [
 	// end
 	"_END_"
 ];
+
+var ActorList = [
+	// 男演員
+	"胡歌",
+	// 女演員
+	"劉詩詩",
+	// end
+	"_END_"
+];
+
