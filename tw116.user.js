@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          TW116
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/tw116.user.js
-// @version       3.5.20160710
+// @version       3.6.20160710
 // @description   As I wish
 // @include       http://www.tw116.com/*
 // @copyright     2015+, Arphen Lin
@@ -78,7 +78,7 @@ function actorLink(){
 		log(s);
 
 		if(s.indexOf("主演")>=0){
-			s = s.replace("主演：", "");
+			s = s.replace("主演：", "").replace(/\//g, " ").replace(/\s+/g, " ");
 			var arr = s.split(" ");
 			$(this).html("主演：");
 			for(var i=0; i<arr.length; i++){
