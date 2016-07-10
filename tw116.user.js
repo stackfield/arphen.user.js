@@ -8,7 +8,7 @@
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
 // @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
-// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js?a=b
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js?c=b
 // @grant         none
 // ==/UserScript==
 
