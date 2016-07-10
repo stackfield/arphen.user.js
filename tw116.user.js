@@ -8,7 +8,7 @@
 // @author        Arphen Lin
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js
 // @require       https://rawgit.com/arphen/arphen.user.js/master/libs/utility.js
-// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js?c=b
+// @require       https://rawgit.com/arphen/arphen.user.js/master/libs/video.js?b=d
 // @grant         none
 // ==/UserScript==
 
@@ -59,7 +59,7 @@ function hilite(){
 		log(s);
 
 		if(s.indexOf("主演")>=0){
-			s = s.replace("主演：", "");
+			s = s.replace("主演：", "").replace(/\//g, " ").replace(/\s+/g, " ");
 			var arr = s.split(" ");
 			for(var i=0; i<arr.length; i++){
 				//$(this).append('<a href="http://www.123kubo.com/actor/'+arr[i]+'.html" target="_blank">'+arr[i]+'</a> ');
