@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          Page Cleaner
 // @namespace     https://github.com/arphen/arphen.user.js/blob/master/page-cleaner.user.js
-// @version       3.9.20160709
+// @version       4.0.20160814
 // @description   get a clean page
 // @include       http*://*
 // @exclude       *docs.google.com*
@@ -68,6 +68,10 @@ var SiteDB = [{
             "font-weight": "bold"
         }
     }]
+}, {
+    "name": "CHT Video",
+    "url": "chtvideo.hinet.net/olympics/2016Rio/broadcast.do",
+    "css_newWin": 'div.dragArea a'
 }, {
     "name": "Digitimes",
     "url": "digitimes.com.tw",
